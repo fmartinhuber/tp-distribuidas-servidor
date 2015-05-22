@@ -3,13 +3,12 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import org.hibernate.annotations.Entity;
 
 @Entity
 @Table(name="Cliente")
 public class ClienteBean{
 	
-	@Id 
+	@Id
 	@GeneratedValue( strategy = GenerationType.AUTO)
 		private int idCliente;
 	private String tipoDocumento;

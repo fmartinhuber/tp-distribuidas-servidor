@@ -11,8 +11,7 @@ import rmi.IAdministradorViaje;
 
 public class AdministradorViajeDao {
 
-	public List<ViajeDto> listarSolicitudesDeViajePorSucursal(
-			SucursalDto sucursal) {
+	public List<ViajeDto> listarSolicitudesDeViajePorSucursal(SucursalDto sucursal) {
 		// TODO Auto-generated method stub
 		return null;
 	}

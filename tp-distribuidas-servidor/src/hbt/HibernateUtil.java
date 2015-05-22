@@ -22,7 +22,6 @@ public class HibernateUtil
         	 config.addAnnotatedClass(CostoBean.class);
         	 config.addAnnotatedClass(CuentaCorrienteBean.class);
         	 config.addAnnotatedClass(DepositoBean.class);
-        	 config.addAnnotatedClass(DestinoBean.class);
         	 config.addAnnotatedClass(DimensionBean.class);
         	 config.addAnnotatedClass(DireccionBean.class);
         	 config.addAnnotatedClass(EmpleadoBean.class);
@@ -42,6 +41,7 @@ public class HibernateUtil
         	 config.addAnnotatedClass(ViajeBean.class);
         	 config.addAnnotatedClass(ViajeVehiculoContratadoBean.class);
         	 config.addAnnotatedClass(ViajeVehiculoPropioBean.class);
+        	 
              sessionFactory = config.buildSessionFactory();
         }
         catch (Throwable ex)

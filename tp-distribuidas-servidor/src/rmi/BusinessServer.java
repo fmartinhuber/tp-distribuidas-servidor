@@ -13,8 +13,6 @@ import negocio.AdministradorVarios;
 
 public class BusinessServer {
 
-	
-	
 	public void publicarServicio(){
 		
 		try {
@@ -23,30 +21,34 @@ public class BusinessServer {
 			System.out.println(IAdministradorVarios.class.toString());
 			System.out.println(IAdministradorVarios.class.getProtectionDomain().getCodeSource().getLocation().toString());
 			
-			//propieda para enlazar un archivo de texto "java.policy" con la propiedad de java. 
+			//Propiedad para enlazar un archivo de texto "java.policy" con la propiedad de java. 
 			System.setProperty("java.security.policy", "java.policy");
 			System.setProperty("java.rmi.server.codebase", IAdministradorVarios.class.getProtectionDomain().getCodeSource().getLocation().toString());
 	        
 			if(System.getSecurityManager() == null) {
 				//Establece un sistema de seguridad. 
 	            //System.setSecurityManager(new SecurityManager());
-	        } 
+	        }
 			
 			//genera un "stub", STUB trabaja como si fuera un proxy. Exporta el objeto calculable. 
-			//Se define el STUB. 
+			//Se define el STUB.
 			IAdministradorVarios stub = (IAdministradorVarios) UnicastRemoteObject.exportObject(administradorV, 0);
-			//POne en memoria a la registry de RMI. 
-			//Sirve para publicar servicios. 
-			//Si el registry ya existe, se debe usar el GetRegistry. 
+			
+			//Pone en memoria a la registry de RMI.
+			//Sirve para publicar servicios.
+			//Si el registry ya existe, se debe usar el GetRegistry.
 			LocateRegistry.createRegistry(Registry.REGISTRY_PORT);
-			//Hace la union entre el objeto y el nombre. (servicio de nombrado) 
-			//bind y rebind hacen lo mismo. Rebind registra con un nombre el objeto, pero si el nombre existe lo reemplaza. 
+			
+			//Hace la union entre el objeto y el nombre. (servicio de nombrado)
+			//bind y rebind hacen lo mismo. Rebind registra con un nombre el objeto, pero si el nombre existe lo reemplaza.
 			Naming.rebind("//localhost/AdministradorVarios", stub);
 			verVinculos();
+			
 		} catch (RemoteException | MalformedURLException e) {
 			e.printStackTrace();
 		}
 	}
+	
 	public void verVinculos() {
         try {
       	  String[] vinculos = Naming.list( "" );
@@ -68,5 +70,7 @@ public class BusinessServer {
 			System.exit(0);
 		}
     }
+    
+    
 
 }

@@ -1,9 +1,14 @@
 package bean;
 
-import java.util.List;
+import javax.persistence.*;
 
-
+@Entity
+@Table(name="Empleado")
 public class EmpleadoBean {
+	
+	@Id
+	@GeneratedValue( strategy = GenerationType.AUTO)
+		private int idEmpleado;
 	private int codEmpleado;
 	private String tipoDocumento;
 	private int nroDocumento;
