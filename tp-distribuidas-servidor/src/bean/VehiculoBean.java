@@ -1,5 +1,6 @@
 package bean;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -27,6 +28,8 @@ public class VehiculoBean{
 	private float capacidadDisponible;
 	private boolean enMantenimiento;
 	private boolean enViaje;
+	
+
 	
 	public String getDominio() {
 		return dominio;

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
+@Table(name="SolicitudDeCarga")
 public class SolicitudDeCargaBean {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.AUTO)

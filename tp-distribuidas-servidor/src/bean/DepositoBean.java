@@ -10,7 +10,7 @@ public class DepositoBean{
 	@GeneratedValue( strategy = GenerationType.AUTO)
 		private int idDeposito;
 	@OneToMany (cascade=CascadeType.ALL)
-	@JoinColumn(name="idCargas")
+	@JoinColumn(name="idDeposito")
 		private List<CargaBean> cargas;
 	
 	public DepositoBean(int idDeposito, List<CargaBean> cargas) {

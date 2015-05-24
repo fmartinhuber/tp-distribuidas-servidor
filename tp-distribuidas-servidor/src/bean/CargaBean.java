@@ -8,10 +8,10 @@ import javax.persistence.*;
 public class CargaBean
 { 
 	@Id 
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue()
 		private int idCarga;
 	@OneToOne(cascade = CascadeType.ALL)
-	@PrimaryKeyJoinColumn
+	@JoinColumn(name="idDimension")
 		private DimensionBean dimension;
 	private boolean apilable;
 	private int cantidadApilable;

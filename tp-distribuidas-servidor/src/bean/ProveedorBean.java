@@ -8,16 +8,17 @@ import javax.persistence.*;
 public class ProveedorBean
 {
 	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO)
+	@GeneratedValue()
 		private int idProveedor;
 	
 	private String tipoDocumento;
 	private int numeroDocumento;
 	private String razonSocial;
 	@OneToOne(cascade = CascadeType.ALL)
-	@PrimaryKeyJoinColumn
+	@JoinColumn(name="idDireccion")
 		private DireccionBean domicilioComercial;
 	@OneToMany (cascade=CascadeType.ALL)
 	@JoinColumn(name="idServicio")
 		private List<ServicioBean> serviciosProvistos;
+	
 }

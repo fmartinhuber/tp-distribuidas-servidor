@@ -1,5 +1,4 @@
 package bean;
-import java.util.List;
 
 import javax.persistence.*;
 
@@ -13,7 +12,9 @@ public class ClienteBean{
 		private int idCliente;
 	private String tipoDocumento;
 	private String nroDocumento;
-		
+	
+	
+	
 	public ClienteBean(String tipoDocumento, String nroDocumento) {
 		this.tipoDocumento = tipoDocumento;
 		this.nroDocumento = nroDocumento;

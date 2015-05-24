@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class DireccionBean
 {
 	@Id 
-	@GeneratedValue( strategy = GenerationType.AUTO)
+	@GeneratedValue()
 		private int idDireccion;
 	private String pais;
 	private String provincia;
@@ -17,4 +17,6 @@ public class DireccionBean
 	private int numero;
 	private int piso;
 	private String departamento;
+	
+	
 }

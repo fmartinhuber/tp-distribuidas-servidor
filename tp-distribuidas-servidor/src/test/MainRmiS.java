@@ -13,7 +13,7 @@ public abstract class MainRmiS {
 		
 		
 		//Prueba dario, pegandole directamente al servidor sin pasar por rmi, para debugear entitys
-		ClienteDto miClienteDto = new ClienteDto("dni", 34000000);
+		ClienteDto miClienteDto = new ClienteDto("dni", "34000000");
 		Cliente miClienteNegocio = new Cliente(miClienteDto);
 		miClienteNegocio.guardar();
 	}

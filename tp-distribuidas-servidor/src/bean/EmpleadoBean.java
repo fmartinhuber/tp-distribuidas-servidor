@@ -1,5 +1,7 @@
 package bean;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,6 +18,8 @@ public class EmpleadoBean {
 	private String apellido;
 	private String nombre;
 	private String funcion;
+	
+	
 
 	public EmpleadoBean(int codEmpleado, String tipoDocumento,
 			int nroDocumento, int CUIL, String apellido, String nombre,

@@ -35,5 +35,5 @@ public class SucursalBean
 	@OneToMany (cascade=CascadeType.ALL)
 	@JoinColumn(name="idVehiculo")
 		private List<VehiculoBean> vehiculosDisponibles;
-		
+	
 }

@@ -15,8 +15,6 @@ public class HibernateUtil
         try
         {
         	 AnnotationConfiguration config = new AnnotationConfiguration();
-        	 config.addAnnotatedClass(AdministradorVariosBean.class);
-        	 config.addAnnotatedClass(AdministradorViajeBean.class);
         	 config.addAnnotatedClass(CargaBean.class);
         	 config.addAnnotatedClass(ClienteBean.class);
         	 config.addAnnotatedClass(CostoBean.class);
