@@ -15,9 +15,7 @@ public class ClienteDao  {
 	
 	public void guardar(ClienteBean clienteBean){
 		HibernateDao hb=HibernateDao.getInstancia();
-		
 		hb.persist(clienteBean);
-		
 	}
 	
 	public ClienteBean obtener(String dni){

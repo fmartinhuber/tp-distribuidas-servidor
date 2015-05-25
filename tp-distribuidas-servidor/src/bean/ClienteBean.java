@@ -2,22 +2,26 @@ package bean;
 
 import javax.persistence.*;
 
-
+@MappedSuperclass
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Entity
-@Table(name="Cliente")
 public class ClienteBean{
 	
 	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO)
-		private int idCliente;
-	private String tipoDocumento;
-	private String nroDocumento;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+		protected int idCliente;
+	protected String tipoDocumento;
+	protected String nroDocumento;
 	
 	
 	
 	public ClienteBean(String tipoDocumento, String nroDocumento) {
 		this.tipoDocumento = tipoDocumento;
 		this.nroDocumento = nroDocumento;
+	}
+	
+	public ClienteBean() {
+		
 	}
 	
 	public String getTipoDocumento() {

@@ -9,13 +9,15 @@ public class MovimientoBean{
 	@Id
 	@GeneratedValue( strategy = GenerationType.AUTO)
 		private int idMovimiento;
+	
 	private int valor;
 	private String estado;
 	private String concepto;
 	private Date fecha;
-		
+	
+	
+	
 	public MovimientoBean(int valor, String estado, String concepto, Date fecha) {
-		super();
 		this.valor = valor;
 		this.estado = estado;
 		this.concepto = concepto;

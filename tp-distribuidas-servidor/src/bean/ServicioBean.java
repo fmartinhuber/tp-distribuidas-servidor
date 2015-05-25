@@ -22,6 +22,10 @@ public class ServicioBean{
 		this.denominacion = denominacion;
 		this.costos = costos;
 	}
+	
+	public ServicioBean() {
+		
+	}
 
 	public String getTipoServicio() {
 		return tipoServicio;

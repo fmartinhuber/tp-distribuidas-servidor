@@ -5,8 +5,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="Carga")
-public class CargaBean
-{ 
+public class CargaBean{
+	
 	@Id 
 	@GeneratedValue()
 		private int idCarga;

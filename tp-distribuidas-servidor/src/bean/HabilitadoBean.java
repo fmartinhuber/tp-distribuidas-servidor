@@ -20,6 +20,10 @@ public class HabilitadoBean
 		ApellidoNombre = apellidoNombre;
 	}
 	
+	public HabilitadoBean() {
+
+	}
+	
 	public String getTipoDocumento() {
 		return tipoDocumento;
 	}

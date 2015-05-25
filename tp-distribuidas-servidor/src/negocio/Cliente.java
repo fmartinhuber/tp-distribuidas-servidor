@@ -31,9 +31,13 @@ public class Cliente implements ICliente{
 	
 	}
 	
-	public void guardar(){
+	/*public void guardar(){
 		ClienteBean clienteBean = new ClienteBean (this.tipoDocumento, this.nroDocumento);
 		ClienteDao.getInstancia().guardar(clienteBean);
+	}*/
+	
+	public void guardar(){
+		
 	}
 	
 	public ClienteBean obtenerCliente(String dni) {

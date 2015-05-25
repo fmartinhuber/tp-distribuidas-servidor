@@ -1,7 +1,5 @@
 package bean;
 
-import java.util.List;
-
 import javax.persistence.*;
 
 @Entity
@@ -31,6 +29,10 @@ public class EmpleadoBean {
 		this.apellido = apellido;
 		this.nombre = nombre;
 		this.funcion = funcion;
+	}
+	
+	public EmpleadoBean() {
+		
 	}
 	
 	public void setcodEmpleado(int codEmpleado) {

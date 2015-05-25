@@ -13,6 +13,8 @@ public class DepositoBean{
 	@JoinColumn(name="idDeposito")
 		private List<CargaBean> cargas;
 	
+	
+	
 	public DepositoBean(int idDeposito, List<CargaBean> cargas) {
 		this.idDeposito = idDeposito;
 		this.cargas = cargas;

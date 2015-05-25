@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class CostoBean{
 	
 	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idCosto;
 	private float tarifa;
 	private String unidadTarifa;
