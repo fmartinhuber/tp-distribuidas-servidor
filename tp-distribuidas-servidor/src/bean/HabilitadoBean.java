@@ -2,8 +2,8 @@ package bean;
 
 import javax.persistence.*;
 
-
 @Entity
+@Table(name="Habilitado")
 public class HabilitadoBean
 {
 	@Id 
@@ -18,6 +18,10 @@ public class HabilitadoBean
 		this.tipoDocumento = tipoDocumento;
 		this.nroDocumento = nroDocumento;
 		ApellidoNombre = apellidoNombre;
+	}
+	
+	public HabilitadoBean() {
+
 	}
 	
 	public String getTipoDocumento() {
@@ -37,7 +41,6 @@ public class HabilitadoBean
 	}
 	public void setApellidoNombre(String apellidoNombre) {
 		ApellidoNombre = apellidoNombre;
-	}
-	
+	}	
 	
 }

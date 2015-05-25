@@ -1,19 +1,18 @@
 package bean;
 import java.io.File;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import org.hibernate.annotations.Entity;
+import javax.persistence.*;
 
 @Entity
-public class CargaBean
-{ 
+@Table(name="Carga")
+public class CargaBean{
+	
 	@Id 
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue()
 		private int idCarga;
-	private DimensionBean dimension;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="idDimension")
+		private DimensionBean dimension;
 	private boolean apilable;
 	private int cantidadApilable;
 	private String fragilidad;

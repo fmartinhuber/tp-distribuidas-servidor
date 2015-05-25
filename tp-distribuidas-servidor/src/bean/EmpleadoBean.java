@@ -1,9 +1,14 @@
 package bean;
 
-import java.util.List;
+import javax.persistence.*;
 
-
+@Entity
+@Table(name="Empleado")
 public class EmpleadoBean {
+	
+	@Id
+	@GeneratedValue( strategy = GenerationType.AUTO)
+		private int idEmpleado;
 	private int codEmpleado;
 	private String tipoDocumento;
 	private int nroDocumento;
@@ -11,6 +16,8 @@ public class EmpleadoBean {
 	private String apellido;
 	private String nombre;
 	private String funcion;
+	
+	
 
 	public EmpleadoBean(int codEmpleado, String tipoDocumento,
 			int nroDocumento, int CUIL, String apellido, String nombre,
@@ -22,6 +29,10 @@ public class EmpleadoBean {
 		this.apellido = apellido;
 		this.nombre = nombre;
 		this.funcion = funcion;
+	}
+	
+	public EmpleadoBean() {
+		
 	}
 	
 	public void setcodEmpleado(int codEmpleado) {

@@ -25,7 +25,7 @@ public class BusinessServer {
 			System.out.println(IAdministradorVarios.class.toString());
 			System.out.println(IAdministradorVarios.class.getProtectionDomain().getCodeSource().getLocation().toString());
 			
-			//propieda para enlazar un archivo de texto "java.policy" con la propiedad de java. 
+			//propiedad para enlazar un archivo de texto "java.policy" con la propiedad de java. 
 			System.setProperty("java.security.policy", "java.policy");
 			System.setProperty("java.rmi.server.codebase", IAdministradorVarios.class.getProtectionDomain().getCodeSource().getLocation().toString());
 	        

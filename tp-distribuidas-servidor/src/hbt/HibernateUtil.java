@@ -15,17 +15,16 @@ public class HibernateUtil
         try
         {
         	 AnnotationConfiguration config = new AnnotationConfiguration();
-        	 config.addAnnotatedClass(AdministradorVariosBean.class);
-        	 config.addAnnotatedClass(AdministradorViajeBean.class);
+        	 
         	 config.addAnnotatedClass(CargaBean.class);
-        	 config.addAnnotatedClass(ClienteBean.class);
+        	 //config.addAnnotatedClass(ClienteBean.class);
         	 config.addAnnotatedClass(CostoBean.class);
         	 config.addAnnotatedClass(CuentaCorrienteBean.class);
         	 config.addAnnotatedClass(DepositoBean.class);
-        	 config.addAnnotatedClass(DestinoBean.class);
         	 config.addAnnotatedClass(DimensionBean.class);
         	 config.addAnnotatedClass(DireccionBean.class);
         	 config.addAnnotatedClass(EmpleadoBean.class);
+        	 config.addAnnotatedClass(EmpresaBean.class);
         	 config.addAnnotatedClass(HabilitadoBean.class);
         	 config.addAnnotatedClass(ItemRemitoBean.class);
         	 config.addAnnotatedClass(MovimientoBean.class);
@@ -42,6 +41,7 @@ public class HibernateUtil
         	 config.addAnnotatedClass(ViajeBean.class);
         	 config.addAnnotatedClass(ViajeVehiculoContratadoBean.class);
         	 config.addAnnotatedClass(ViajeVehiculoPropioBean.class);
+        	 
              sessionFactory = config.buildSessionFactory();
         }
         catch (Throwable ex)

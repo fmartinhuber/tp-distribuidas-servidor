@@ -13,7 +13,7 @@ import bean.HabilitadoBean;
 public class Cliente implements ICliente{
 	
 	private String tipoDocumento;
-	private int nroDocumento;
+	private String nroDocumento;
 	
 	//Asi estaba antes:
 	//private List<HabilitadoBean> habilitados; 
@@ -31,9 +31,13 @@ public class Cliente implements ICliente{
 	
 	}
 	
-	public void guardar(){
-		ClienteBean clienteBean = new ClienteBean (this.tipoDocumento, this.tipoDocumento);
+	/*public void guardar(){
+		ClienteBean clienteBean = new ClienteBean (this.tipoDocumento, this.nroDocumento);
 		ClienteDao.getInstancia().guardar(clienteBean);
+	}*/
+	
+	public void guardar(){
+		
 	}
 	
 	public ClienteBean obtenerCliente(String dni) {
@@ -48,11 +52,11 @@ public class Cliente implements ICliente{
 		this.tipoDocumento = tipoDocumento;
 	}
 	
-	public int getNroDocumento() {
+	public String getNroDocumento() {
 		return nroDocumento;
 	}
 	
-	public void setNroDocumento(int nroDocumento) {
+	public void setNroDocumento(String nroDocumento) {
 		this.nroDocumento = nroDocumento;
 	}
 	

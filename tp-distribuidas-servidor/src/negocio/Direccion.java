@@ -23,6 +23,10 @@ public class Direccion{
 		this.departamento = departamento;
 	}
 
+	public Direccion() {
+		
+	}
+
 	public String getPais() {
 		return pais;
 	}
