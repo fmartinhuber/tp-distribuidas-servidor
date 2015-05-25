@@ -21,7 +21,7 @@ public class Cliente implements ICliente{
 	
 	public Cliente (ClienteDto clienteDto) {
 		this.tipoDocumento = clienteDto.getTipoDocumento();
-		this.nroDocumento = clienteDto.getNroDocumento();
+		this.nroDocumento = String.valueOf(clienteDto.getNroDocumento());
 		//Asi estaba antes, esta linea estaba comentada porque rompia:
 		//this.habilitados = clienteDto.getHabilitados();
 		//Daro: Aca como hacemos para pasar la lista de HabilitadosDTO a la lista de habilitadosNEGOCIO ???
