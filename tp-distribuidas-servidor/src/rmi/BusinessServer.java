@@ -9,6 +9,7 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
 import negocio.AdministradorVarios;
+import negocio.AdministradorViaje;
 
 
 public class BusinessServer {
@@ -20,6 +21,7 @@ public class BusinessServer {
 		try {
 			
 			IAdministradorVarios administradorV = AdministradorVarios.getInstancia();
+			IAdministradorViaje administradorViaje = AdministradorViaje.getInstancia();
 			System.out.println(IAdministradorVarios.class.toString());
 			System.out.println(IAdministradorVarios.class.getProtectionDomain().getCodeSource().getLocation().toString());
 			
@@ -34,14 +36,16 @@ public class BusinessServer {
 			
 			//genera un "stub", STUB trabaja como si fuera un proxy. Exporta el objeto calculable. 
 			//Se define el STUB. 
-			IAdministradorVarios stub = (IAdministradorVarios) UnicastRemoteObject.exportObject(administradorV, 0);
+			IAdministradorVarios stubAdmVarios = (IAdministradorVarios) UnicastRemoteObject.exportObject(administradorV, 0);
+			IAdministradorViaje stubAdmViaje = (IAdministradorViaje) UnicastRemoteObject.exportObject(administradorViaje, 0);
 			//POne en memoria a la registry de RMI. 
 			//Sirve para publicar servicios. 
 			//Si el registry ya existe, se debe usar el GetRegistry. 
 			LocateRegistry.createRegistry(Registry.REGISTRY_PORT);
 			//Hace la union entre el objeto y el nombre. (servicio de nombrado) 
 			//bind y rebind hacen lo mismo. Rebind registra con un nombre el objeto, pero si el nombre existe lo reemplaza. 
-			Naming.rebind("//localhost/AdministradorVarios", stub);
+			Naming.rebind("//localhost/AdministradorVarios", stubAdmVarios);
+			Naming.rebind("//localhost/AdministradorViaje", stubAdmViaje);
 			verVinculos();
 		} catch (RemoteException | MalformedURLException e) {
 			e.printStackTrace();
@@ -62,7 +66,8 @@ public class BusinessServer {
     
     public void cerrar() {
 		try {
-			Naming.unbind("GestionUsuarios");
+			Naming.unbind("AdministradorVarios");
+			Naming.unbind("AdministradorViaje");
 		} catch (Exception e) {
 		} finally {
 			System.exit(0);
