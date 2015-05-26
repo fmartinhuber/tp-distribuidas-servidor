@@ -2,9 +2,8 @@ package bean;
 
 import javax.persistence.*;
 
-@MappedSuperclass
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class ClienteBean{
 	
 	@Id
