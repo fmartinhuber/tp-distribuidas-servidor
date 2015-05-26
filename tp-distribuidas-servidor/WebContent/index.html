@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Distribuidas</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="jsp/solicitud.jsp">Solicitudes</a>
+                </li>
+                <li>
+                    <a href="jsp/cargas.jsp">Cargas</a>
+                </li>
+                <li>
+                    <a href="jsp/envios.jsp">Envios</a>
+                </li>
+                <li>
+                    <a href="#">Envio Exterior</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Der große Verteiler  </h1>
+                        <p>La empresa de distribución y envíos Der große Verteiler  tienen gran reputación y fama gracias a su esmerada atención y responsabilidad en el tratamiento de las cargas que envían sus clientes, es por esto que para mantener y superar sus estándares de calidad y facilitar la administración de la empresa decidió la implementación de un sistema informático que le permita llevar un mayor control sobre sus operaciones, tanto en lo que respecta a atención al cliente y control de las cargas como a sus áreas operativas.
+						Cuenta con más de 50 sucursales en todo el país (la misma no opera fuera del país directamente sino a través de carriers internacionales) y existen por lo menos una sucursal en cada una de las provincia (por lo general en la capital de la misma o muy cerca de ellas) y en alguna provincias con alto tráfico de envíos, por ejemplo Buenos Aires, Córdoba, Santa Fe y Mendoza. 
+						</p>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
