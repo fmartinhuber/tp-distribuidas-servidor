@@ -4,8 +4,11 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name="Empresa")
 public class EmpresaBean extends ClienteBean{
+
+	private static final long serialVersionUID = 1L;
 	
 	private String razonSocial;
 	@OneToOne
@@ -18,7 +21,7 @@ public class EmpresaBean extends ClienteBean{
 	
 	
 	
-	public EmpresaBean(String tipoDocumento, String nroDocumento, List<HabilitadoBean> habilitados) {
+	public EmpresaBean(String tipoDocumento, String nroDocumento) {
 		super(tipoDocumento, nroDocumento);
 	}
 	

@@ -8,9 +8,9 @@ import javax.persistence.*;
 public class SucursalBean
 {
 	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idSucursal;
-		private Integer nroSucursal;
+	private Integer nroSucursal;
 	@OneToOne (cascade=CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 		private DireccionBean domicilio;

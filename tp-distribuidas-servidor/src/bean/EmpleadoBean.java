@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class EmpleadoBean {
 	
 	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idEmpleado;
 	private int codEmpleado;
 	private String tipoDocumento;

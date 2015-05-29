@@ -7,8 +7,8 @@ import javax.persistence.*;
 @Table(name="Carga")
 public class CargaBean{
 	
-	@Id 
-	@GeneratedValue()
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idCarga;
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="idDimension")

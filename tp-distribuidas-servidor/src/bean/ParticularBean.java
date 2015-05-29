@@ -9,17 +9,14 @@ import javax.persistence.*;
 @Table(name="Particular")
 public class ParticularBean extends ClienteBean{
 	
+	private static final long serialVersionUID = 1L;
+	
 	private String apellido;
 	private String nombre;
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="idDireccion")
 		private DireccionBean direccion;
 	
-	
-	
-	public ParticularBean(String tipoDocumento, String nroDocumento, List<HabilitadoBean> habilitados) {
-		super(tipoDocumento, nroDocumento);
-	}
 	
 	public ParticularBean() {
 		

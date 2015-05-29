@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="SolicitudDeCarga")
 public class SolicitudDeCargaBean {
-	@Id 
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idSolicitudDeCarga;
 	@OneToOne(cascade = CascadeType.ALL)

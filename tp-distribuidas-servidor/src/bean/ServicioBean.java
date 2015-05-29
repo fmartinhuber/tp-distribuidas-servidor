@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class ServicioBean{
 	
 	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idServicio;
 	private String tipoServicio;
 	private String denominacion;

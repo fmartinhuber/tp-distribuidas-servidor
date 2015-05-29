@@ -20,7 +20,7 @@ public abstract class MainRmiS {
 		DireccionDto miDireccionDto = new DireccionDto("Argentina", "Buenos Aires", "Parque Chacabuco", 1440, "Las casas", 7090, 4, "4B");
 		ParticularDto miParticularDto = new ParticularDto("dni", "34108511", "Nieto", "Dario", miDireccionDto);
 		Particular miParticularNegocio = new Particular(miParticularDto);
-		miParticularNegocio.guardar();
+		miParticularNegocio.guardar(miParticularDto.getTipoDocumento(), miParticularDto.getNroDocumento());
 		
 		//Cliente no existe, es heredado por Particular y Empresa, cambio todo para que persista Empleados y Particulares
 		/*

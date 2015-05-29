@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class VehiculoBean{
 	
 	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idVehiculo;
 	
 	private String dominio;

@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class ProveedorBean
 {
 	@Id
-	@GeneratedValue()
+	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idProveedor;
 	
 	private String tipoDocumento;
