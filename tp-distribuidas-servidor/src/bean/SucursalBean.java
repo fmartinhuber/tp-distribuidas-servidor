@@ -36,4 +36,5 @@ public class SucursalBean
 	@JoinColumn(name="idVehiculo")
 		private List<VehiculoBean> vehiculosDisponibles;
 	
+	
 }
