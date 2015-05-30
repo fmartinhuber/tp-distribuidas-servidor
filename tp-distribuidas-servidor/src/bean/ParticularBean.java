@@ -1,7 +1,5 @@
 package bean;
 
-import java.util.List;
-
 import javax.persistence.*;
 
 @Entity
@@ -16,8 +14,17 @@ public class ParticularBean extends ClienteBean{
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="idDireccion")
 		private DireccionBean direccion;
+		
 	
 	
+	public ParticularBean(String tipoDocumento, String nroDocumento,
+			String apellido, String nombre, DireccionBean direccion) {
+		super(tipoDocumento, nroDocumento);
+		this.apellido = apellido;
+		this.nombre = nombre;
+		this.direccion = direccion;
+	}
+
 	public ParticularBean() {
 		
 	}

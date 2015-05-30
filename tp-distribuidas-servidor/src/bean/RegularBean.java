@@ -15,12 +15,18 @@ public class RegularBean extends EmpresaBean{
 	private String modoPago;
 	private float montoAutorizacion;
 	
+	
+	
 	public RegularBean(String tipoDocumento, String nroDocumento, CuentaCorrienteBean cuentaCorriente, 
 			String modoPago, float montoAutorizacion) {
 		super(tipoDocumento, nroDocumento);
 		this.cuentaCorriente = cuentaCorriente;
 		this.modoPago = modoPago;
 		this.montoAutorizacion = montoAutorizacion;
+	}
+	
+	public RegularBean() {
+	
 	}
 
 	public CuentaCorrienteBean getCuentaCorriente() {

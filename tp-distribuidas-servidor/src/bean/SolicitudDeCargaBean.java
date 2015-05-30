@@ -28,6 +28,8 @@ public class SolicitudDeCargaBean {
 	private File manifiesto;
 	private String estadoSolicitud;
 	
+	
+	
 	public SolicitudDeCargaBean(ClienteBean cliente, List<CargaBean> cargas,
 			List<HabilitadoBean> habilitado, DireccionBean destino,
 			Date fechaEntregaProbable, Date fechaEntregaMaxima,

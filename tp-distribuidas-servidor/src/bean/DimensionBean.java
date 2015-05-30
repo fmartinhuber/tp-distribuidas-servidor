@@ -15,6 +15,8 @@ public class DimensionBean{
 	private float peso;
 	private float volumen;
 	
+	
+	
 	public DimensionBean(float alto, float ancho, float profundidad, float peso, float volumen) {
 		this.alto = alto;
 		this.ancho = ancho;

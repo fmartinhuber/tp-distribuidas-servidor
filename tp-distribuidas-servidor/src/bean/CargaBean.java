@@ -22,6 +22,8 @@ public class CargaBean{
 	private String permiso;
 	private File archivoPermiso;
 	
+	
+	
 	public CargaBean(DimensionBean dimension, boolean apilable, int cantidadApilable, String fragilidad, 
 			String tratamiento, String condicionViaje, String textoManipulacion, String permiso,
 			File archivoPermiso) {

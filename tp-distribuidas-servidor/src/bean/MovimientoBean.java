@@ -6,10 +6,10 @@ import javax.persistence.*;
 @Entity
 @Table(name="Movimiento")
 public class MovimientoBean{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idMovimiento;
-	
 	private int valor;
 	private String estado;
 	private String concepto;

@@ -4,8 +4,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="Direccion")
-public class DireccionBean
-{
+public class DireccionBean{
+	
 	@Id 
 	@GeneratedValue(strategy = GenerationType.AUTO)
 		private Integer idDireccion;
@@ -17,6 +17,8 @@ public class DireccionBean
 	private int numero;
 	private int piso;
 	private String departamento;
+	
+	
 	
 	public DireccionBean(String pais, String provincia, String localidad,
 			int codigoPostal, String calle, int numero, int piso,

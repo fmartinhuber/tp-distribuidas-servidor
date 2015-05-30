@@ -16,6 +16,8 @@ public class ServicioBean{
 	@JoinColumn(name="idCosto")
 		private List<CostoBean> costos;
 	
+	
+	
 	public ServicioBean(String tipoServicio, String denominacion, List<CostoBean> costos) {
 		super();
 		this.tipoServicio = tipoServicio;

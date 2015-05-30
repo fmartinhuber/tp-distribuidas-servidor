@@ -4,14 +4,16 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="Habilitado")
-public class HabilitadoBean
-{
+public class HabilitadoBean{
+	
 	@Id 
 	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idHabilitado;
 	private String tipoDocumento;
 	private int nroDocumento;
 	private String ApellidoNombre;
+	
+	
 	
 	public HabilitadoBean(String tipoDocumento, int nroDocumento, String apellidoNombre) {
 		super();

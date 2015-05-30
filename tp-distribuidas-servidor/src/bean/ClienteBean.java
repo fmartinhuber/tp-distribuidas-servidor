@@ -16,6 +16,8 @@ public abstract class ClienteBean implements Serializable{
 	protected String tipoDocumento;
 	protected String nroDocumento;
 	
+	
+	
 	public ClienteBean(String tipoDocumento, String nroDocumento) {
 		this.tipoDocumento = tipoDocumento;
 		this.nroDocumento = nroDocumento;

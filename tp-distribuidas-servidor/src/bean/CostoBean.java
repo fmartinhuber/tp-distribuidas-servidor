@@ -15,6 +15,8 @@ public class CostoBean{
 	private Date vigencia;
 	private String condicionPago;
 	
+	
+	
 	public CostoBean(float tarifa, String unidadTarifa, Date vigencia, 	String condicionPago) {
 		this.tarifa = tarifa;
 		this.unidadTarifa = unidadTarifa;
