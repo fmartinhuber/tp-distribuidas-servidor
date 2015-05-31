@@ -1,5 +1,6 @@
 package bean;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,12 +15,10 @@ public class SolicitudDeCargaBean {
 	@OneToOne(cascade = CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 		private ClienteBean cliente;
-	@OneToMany (cascade=CascadeType.ALL)
-	@JoinColumn(name="idCarga")
-		private List<CargaBean> cargas;
-	@OneToMany (cascade=CascadeType.ALL)
-	@JoinColumn(name="idHabilitado")
-		private List<HabilitadoBean> habilitado;
+	@OneToMany (cascade=CascadeType.ALL, mappedBy="solicitudesdecarga_carga")
+		private List<CargaBean> cargas = new ArrayList<CargaBean>();
+	@OneToMany (cascade=CascadeType.ALL, mappedBy="solicitudesdecarga_habilitado")
+		private List<HabilitadoBean> habilitado = new ArrayList<HabilitadoBean>();
 	@OneToOne(cascade = CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 		private DireccionBean destino;
@@ -27,7 +26,12 @@ public class SolicitudDeCargaBean {
 	private Date fechaEntregaMaxima;
 	private File manifiesto;
 	private String estadoSolicitud;
-	
+	@ManyToOne
+	@JoinColumn(name="idSucursal", nullable=false)
+		private SucursalBean sucursales_solicituddecarga;
+	@ManyToOne
+	@JoinColumn(name="idViaje", nullable=false)
+		private ViajeBean viajes_solicitudes;
 	
 	
 	public SolicitudDeCargaBean(ClienteBean cliente, List<CargaBean> cargas,

@@ -10,7 +10,7 @@ public class RegularBean extends EmpresaBean{
 	private static final long serialVersionUID = 1L;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="idCuentaCorriente")
+	@JoinColumn(name="idCuentaCorriente", nullable=false)
 		private CuentaCorrienteBean cuentaCorriente;
 	private String modoPago;
 	private float montoAutorizacion;

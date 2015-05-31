@@ -1,5 +1,6 @@
 package bean;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -20,12 +21,10 @@ public abstract class ViajeBean implements Serializable{
 	private Integer nroSucursalDestino;
 	private Date fechaPartida;
 	private Date fechaArribo;
-	@OneToMany (cascade=CascadeType.ALL)
-	@JoinColumn(name="idServicio")
-		private List<ServicioBean> serviciosAdicionales;
-	@OneToMany (cascade=CascadeType.ALL)
-	@JoinColumn(name="idSolicitudDeCarga")
-		private List<SolicitudDeCargaBean> solicitudesDeCarga;
+	@OneToMany (cascade=CascadeType.ALL, mappedBy="viajes_servicios")
+		private List<ServicioBean> serviciosAdicionales = new ArrayList<ServicioBean>();
+	@OneToMany (cascade=CascadeType.ALL, mappedBy="viajes_solicitudes")
+		private List<SolicitudDeCargaBean> solicitudesDeCarga = new ArrayList<SolicitudDeCargaBean>();
 	private Date fechaPrioridad;
 	
 	

@@ -1,12 +1,15 @@
 package bean;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
 
+import org.hibernate.mapping.Array;
+
 @Entity
 @Table(name="Sucursal")
-public class SucursalBean
-{
+public class SucursalBean{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idSucursal;
@@ -24,18 +27,15 @@ public class SucursalBean
 	@OneToOne (cascade=CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 		private EmpleadoBean encargadoDespacho;
-	@OneToMany (cascade=CascadeType.ALL)
-	@JoinColumn(name="idEmpleado")
-		private List<EmpleadoBean> empleados;
+	@OneToMany (cascade=CascadeType.ALL, mappedBy="sucursales_empleado")
+		private List<EmpleadoBean> empleados = new ArrayList<EmpleadoBean>();
 	@OneToOne (cascade=CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 		private DepositoBean deposito;
-	@OneToMany (cascade=CascadeType.ALL)
-	@JoinColumn(name="idSucursal")
-		private List<SolicitudDeCargaBean> SolicitudesDeCarga;
-	@OneToMany (cascade=CascadeType.ALL)
-	@JoinColumn(name="idVehiculo")
-		private List<VehiculoBean> vehiculosDisponibles;
+	@OneToMany (cascade=CascadeType.ALL, mappedBy="sucursales_solicituddecarga")
+		private List<SolicitudDeCargaBean> SolicitudesDeCarga = new ArrayList<SolicitudDeCargaBean>();
+	@OneToMany (cascade=CascadeType.ALL, mappedBy="sucursales_vehiculos")
+		private List<VehiculoBean> vehiculosDisponibles = new ArrayList<VehiculoBean>();
 	
 	
 	

@@ -12,6 +12,9 @@ public class HabilitadoBean{
 	private String tipoDocumento;
 	private int nroDocumento;
 	private String ApellidoNombre;
+	@ManyToOne
+	@JoinColumn(name="idSolicitudDeCarga", nullable=false)
+		private SolicitudDeCargaBean solicitudesdecarga_habilitado;
 	
 	
 	

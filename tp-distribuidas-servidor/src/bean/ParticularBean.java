@@ -12,7 +12,7 @@ public class ParticularBean extends ClienteBean{
 	private String apellido;
 	private String nombre;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="idDireccion")
+	@JoinColumn(name="idDireccion", nullable=false)
 		private DireccionBean direccion;
 		
 	

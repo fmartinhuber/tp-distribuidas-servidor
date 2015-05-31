@@ -1,4 +1,5 @@
 package bean;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -12,12 +13,11 @@ public class EmpresaBean extends ClienteBean{
 	
 	private String razonSocial;
 	@OneToOne
-	@JoinColumn(name="idDireccion")
+	@JoinColumn(name="idDireccion", nullable=false)
 		private DireccionBean domicilioComercial;
 	private String condiciónIVA;
-	@OneToMany (cascade=CascadeType.ALL)
-	@JoinColumn(name="idDireccionHabilitada")
-		public List<DireccionBean> destinosHabilitados;
+	@OneToMany (cascade=CascadeType.ALL, mappedBy="empresas")
+		public List<DireccionBean> destinosHabilitados = new ArrayList<DireccionBean>();
 	
 	
 	

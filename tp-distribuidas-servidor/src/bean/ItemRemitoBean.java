@@ -11,8 +11,11 @@ public class ItemRemitoBean{
 		private int idItemRemito;
 	private int cantidad;
 	@OneToOne
-	@JoinColumn(name="idCarga")
+	@JoinColumn(name="idCarga", nullable=false)
 		private CargaBean carga;
+	@ManyToOne
+	@JoinColumn(name="idRemito", nullable=false)
+		private RemitoBean remitos;
 	
 	
 	

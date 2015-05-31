@@ -1,4 +1,5 @@
 package bean;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -12,9 +13,8 @@ public class CuentaCorrienteBean{
 		private Integer idCuentaCorriente;
 	private float saldo;
 	private Integer numero;
-	@OneToMany (cascade=CascadeType.ALL)
-	@JoinColumn(name="idMovimiento")
-		private List<MovimientoBean> movimientos;
+	@OneToMany (cascade=CascadeType.ALL, mappedBy="cuentascorrientes")
+		private List<MovimientoBean> movimientos = new ArrayList<MovimientoBean>();
 	
 	
 	

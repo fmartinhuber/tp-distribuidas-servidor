@@ -1,7 +1,9 @@
 package bean;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
+
 
 @Entity
 @Table(name="Costo")
@@ -15,17 +17,33 @@ public class CostoBean{
 	private Date vigencia;
 	private String condicionPago;
 	
+	@ManyToOne
+	@JoinColumn(name="idServicio", nullable=false)
+		private ServicioBean servicios;
+
 	
 	
-	public CostoBean(float tarifa, String unidadTarifa, Date vigencia, 	String condicionPago) {
+	public CostoBean(int idCosto, float tarifa, String unidadTarifa,
+			Date vigencia, String condicionPago, ServicioBean servicios) {
+		super();
+		this.idCosto = idCosto;
 		this.tarifa = tarifa;
 		this.unidadTarifa = unidadTarifa;
 		this.vigencia = vigencia;
 		this.condicionPago = condicionPago;
+		this.servicios = servicios;
 	}
 
 	public CostoBean() {
 		
+	}
+
+	public int getIdCosto() {
+		return idCosto;
+	}
+
+	public void setIdCosto(int idCosto) {
+		this.idCosto = idCosto;
 	}
 
 	public float getTarifa() {
@@ -60,4 +78,12 @@ public class CostoBean{
 		this.condicionPago = condicionPago;
 	}
 
+	public ServicioBean getServicios() {
+		return servicios;
+	}
+
+	public void setServicios(ServicioBean servicios) {
+		this.servicios = servicios;
+	}
+	
 }

@@ -1,9 +1,6 @@
 package test;
 
-import negocio.Cliente;
 import negocio.Particular;
-import dao.DireccionDao;
-import dto.ClienteDto;
 import dto.DireccionDto;
 import dto.ParticularDto;
 import rmi.BusinessServer;

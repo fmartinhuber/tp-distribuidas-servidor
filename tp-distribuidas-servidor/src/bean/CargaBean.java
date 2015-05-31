@@ -11,7 +11,7 @@ public class CargaBean{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idCarga;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="idDimension")
+	@JoinColumn(name="idDimension", nullable=false)
 		private DimensionBean dimension;
 	private boolean apilable;
 	private int cantidadApilable;
@@ -21,12 +21,22 @@ public class CargaBean{
 	private String textoManipulacion;
 	private String permiso;
 	private File archivoPermiso;
+	@ManyToOne
+	@JoinColumn(name="idDeposito", nullable=false)
+		private DepositoBean depositos;
+	@ManyToOne
+	@JoinColumn(name="idSolicitudDeCarga", nullable=false)
+		private SolicitudDeCargaBean solicitudesdecarga_carga;
 	
 	
 	
-	public CargaBean(DimensionBean dimension, boolean apilable, int cantidadApilable, String fragilidad, 
-			String tratamiento, String condicionViaje, String textoManipulacion, String permiso,
-			File archivoPermiso) {
+	public CargaBean(int idCarga, DimensionBean dimension, boolean apilable,
+			int cantidadApilable, String fragilidad, String tratamiento,
+			String condicionViaje, String textoManipulacion, String permiso,
+			File archivoPermiso, DepositoBean depositos,
+			SolicitudDeCargaBean solicitudesdecarga_carga) {
+		super();
+		this.idCarga = idCarga;
 		this.dimension = dimension;
 		this.apilable = apilable;
 		this.cantidadApilable = cantidadApilable;
@@ -36,10 +46,20 @@ public class CargaBean{
 		this.textoManipulacion = textoManipulacion;
 		this.permiso = permiso;
 		this.archivoPermiso = archivoPermiso;
+		this.depositos = depositos;
+		this.solicitudesdecarga_carga = solicitudesdecarga_carga;
 	}
-	
-	public CargaBean(){
-		
+
+	public CargaBean() {
+		super();
+	}
+
+	public int getIdCarga() {
+		return idCarga;
+	}
+
+	public void setIdCarga(int idCarga) {
+		this.idCarga = idCarga;
 	}
 
 	public DimensionBean getDimension() {
@@ -113,6 +133,22 @@ public class CargaBean{
 	public void setArchivoPermiso(File archivoPermiso) {
 		this.archivoPermiso = archivoPermiso;
 	}
-	
-	
+
+	public DepositoBean getDepositos() {
+		return depositos;
+	}
+
+	public void setDepositos(DepositoBean depositos) {
+		this.depositos = depositos;
+	}
+
+	public SolicitudDeCargaBean getSolicitudesdecarga_carga() {
+		return solicitudesdecarga_carga;
+	}
+
+	public void setSolicitudesdecarga_carga(
+			SolicitudDeCargaBean solicitudesdecarga_carga) {
+		this.solicitudesdecarga_carga = solicitudesdecarga_carga;
+	}
+		
 }

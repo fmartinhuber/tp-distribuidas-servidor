@@ -1,4 +1,5 @@
 package bean;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -11,9 +12,8 @@ public class DepositoBean{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idDeposito;
 	private String nombreDeposito;
-	@OneToMany (cascade=CascadeType.ALL)
-	@JoinColumn(name="idCarga")
-		private List<CargaBean> cargas;
+	@OneToMany (cascade=CascadeType.ALL, mappedBy="depositos")
+		private List<CargaBean> cargas = new ArrayList<CargaBean>();
 	
 	
 	

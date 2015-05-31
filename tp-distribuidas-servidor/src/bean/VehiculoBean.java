@@ -27,6 +27,9 @@ public class VehiculoBean{
 	private float capacidadDisponible;
 	private boolean enMantenimiento;
 	private boolean enViaje;
+	@ManyToOne
+	@JoinColumn(name="idSucursal", nullable=false)
+		private SucursalBean sucursales_vehiculos;
 	
 	public VehiculoBean(int idVehiculo, String dominio, String marca,
 			String modelo, int anio, int cedulaVerde,

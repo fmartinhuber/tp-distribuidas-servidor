@@ -16,6 +16,9 @@ public class EmpleadoBean {
 	private String apellido;
 	private String nombre;
 	private String funcion;
+	@ManyToOne
+	@JoinColumn(name="idSucursal", nullable=false)
+		private SucursalBean sucursales_empleado;
 	
 	
 

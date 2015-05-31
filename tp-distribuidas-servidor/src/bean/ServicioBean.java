@@ -1,4 +1,5 @@
 package bean;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -9,24 +10,28 @@ public class ServicioBean{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column (name="idServicio")
 		private int idServicio;
 	private String tipoServicio;
 	private String denominacion;
-	@OneToMany (cascade=CascadeType.ALL)
-	@JoinColumn(name="idCosto")
-		private List<CostoBean> costos;
+	@OneToMany (cascade=CascadeType.ALL, mappedBy="servicios")
+		private List<CostoBean> costos = new ArrayList<CostoBean>();
+	@ManyToOne
+	@JoinColumn(name="idViaje", nullable=false)
+		private ViajeBean viajes_servicios;
+	@ManyToOne
+	@JoinColumn(name="idProveedor", nullable=false)
+		private ProveedorBean proveedores;
 	
 	
 	
-	public ServicioBean(String tipoServicio, String denominacion, List<CostoBean> costos) {
-		super();
-		this.tipoServicio = tipoServicio;
-		this.denominacion = denominacion;
-		this.costos = costos;
+	
+	public int getIdServicio() {
+		return idServicio;
 	}
-	
-	public ServicioBean() {
-		
+
+	public void setIdServicio(int idServicio) {
+		this.idServicio = idServicio;
 	}
 
 	public String getTipoServicio() {
@@ -53,4 +58,5 @@ public class ServicioBean{
 		this.costos = costos;
 	}
 
+	
 }

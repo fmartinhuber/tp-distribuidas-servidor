@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class SolicitudDeCargaConRetiroBean extends SolicitudDeCargaBean{
 	
 	@OneToOne
-	@JoinColumn(name="idDireccion")
+	@JoinColumn(name="idDireccion", nullable=false)
 		private DireccionBean domicilioCarga;
 	private Date fechaRetiro;
 	private String rangoHorario;
