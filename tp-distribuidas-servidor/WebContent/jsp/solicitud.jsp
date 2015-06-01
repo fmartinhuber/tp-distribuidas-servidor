@@ -63,8 +63,16 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Solicitud de Carga</h1>
-
-
+                        <form action="altaSolicitud">
+						<table>
+						<tr>
+						<td>
+						Cliente <input>
+						</td>
+						
+						</tr>
+						</table>
+						</form>
 
 
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
