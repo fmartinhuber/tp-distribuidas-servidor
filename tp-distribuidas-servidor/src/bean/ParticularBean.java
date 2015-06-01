@@ -1,7 +1,5 @@
 package bean;
 
-import java.util.List;
-
 import javax.persistence.*;
 
 @Entity
@@ -9,18 +7,24 @@ import javax.persistence.*;
 @Table(name="Particular")
 public class ParticularBean extends ClienteBean{
 	
+	private static final long serialVersionUID = 1L;
+	
 	private String apellido;
 	private String nombre;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="idDireccion")
+	@JoinColumn(name="idDireccion", nullable=false)
 		private DireccionBean direccion;
+		
 	
 	
-	
-	public ParticularBean(String tipoDocumento, String nroDocumento, List<HabilitadoBean> habilitados) {
+	public ParticularBean(String tipoDocumento, String nroDocumento,
+			String apellido, String nombre, DireccionBean direccion) {
 		super(tipoDocumento, nroDocumento);
+		this.apellido = apellido;
+		this.nombre = nombre;
+		this.direccion = direccion;
 	}
-	
+
 	public ParticularBean() {
 		
 	}

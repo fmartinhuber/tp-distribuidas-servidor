@@ -1,4 +1,5 @@
 package bean;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -6,22 +7,24 @@ import javax.persistence.*;
 @Entity
 @Table(name="Deposito")
 public class DepositoBean{
+	
 	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idDeposito;
-	@OneToMany (cascade=CascadeType.ALL)
-	@JoinColumn(name="idDeposito")
-		private List<CargaBean> cargas;
+	private String nombreDeposito;
+	@OneToMany (cascade=CascadeType.ALL, mappedBy="depositos")
+		private List<CargaBean> cargas = new ArrayList<CargaBean>();
 	
 	
 	
-	public DepositoBean(int idDeposito, List<CargaBean> cargas) {
+	public DepositoBean(int idDeposito, String nombreDeposito, List<CargaBean> cargas) {
 		this.idDeposito = idDeposito;
+		this.nombreDeposito = nombreDeposito;
 		this.cargas = cargas;
 	}
-
+	
 	public DepositoBean() {
-		
+	
 	}
 
 	public int getIdDeposito() {
@@ -30,6 +33,14 @@ public class DepositoBean{
 
 	public void setIdDeposito(int idDeposito) {
 		this.idDeposito = idDeposito;
+	}
+
+	public String getNombreDeposito() {
+		return nombreDeposito;
+	}
+
+	public void setNombreDeposito(String nombreDeposito) {
+		this.nombreDeposito = nombreDeposito;
 	}
 
 	public List<CargaBean> getCargas() {

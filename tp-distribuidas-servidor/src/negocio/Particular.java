@@ -1,18 +1,14 @@
 package negocio;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import rmi.ICliente;
 import bean.DireccionBean;
-import bean.HabilitadoBean;
 import bean.ParticularBean;
-import dao.DireccionDao;
 import dao.ParticularDao;
 import dto.ClienteDto;
 import dto.DireccionDto;
-import dto.HabilitadoDto;
 import dto.ParticularDto;
+
 
 public class Particular extends Cliente implements ICliente{
 	
@@ -24,18 +20,21 @@ public class Particular extends Cliente implements ICliente{
 		super(new ClienteDto(miParticularDto.getTipoDocumento(), miParticularDto.getNroDocumento()));
 		this.apellido = miParticularDto.getApellido();
 		this.nombre = miParticularDto.getNombre();
-		this.direccion = this.particularDtoTOParticularNegocio_Direccion(miParticularDto.getDireccion());
+		this.direccion = particularDtoTOParticularNegocio_Direccion(miParticularDto.getDireccion());
 	}
-	
+
 	public Particular() {
 		
 	}
 	
-	public void guardar(){
+	public void guardar(String tipoDoc, String nroDoc){
 		ParticularBean miParticularBean = new ParticularBean();
+		miParticularBean.setTipoDocumento(tipoDoc);
+		miParticularBean.setNroDocumento(nroDoc);
 		miParticularBean.setApellido(this.apellido);
 		miParticularBean.setDireccionBean(particularNegocioTOParticularBean_Direccion(this.direccion));
 		miParticularBean.setNombre(this.nombre);
+		
 		ParticularDao.getInstancia().guardar(miParticularBean);
 	}
 

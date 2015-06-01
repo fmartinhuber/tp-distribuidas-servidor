@@ -30,12 +30,12 @@ public class Carga{
 		this.archivoPermiso = archivoPermiso;
 	}
 	
-	public void guardar(){
+	/*public void guardar(){
 		CargaBean cargaBean = new CargaBean (dimensionNegocioTOdimensionBean(this.dimension), this.apilable, 
 				this.cantidadApilable, this.fragilidad, this.tratamiento, this.condicionViaje, 
 				this.textoManipulacion, this.permiso, this.archivoPermiso);		
 		CargaDao.getInstancia().guardar(cargaBean);
-	}
+	}*/
 
 	public Dimension getDimension() {
 		return dimension;

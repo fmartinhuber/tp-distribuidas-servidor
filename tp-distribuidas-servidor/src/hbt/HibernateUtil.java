@@ -17,7 +17,7 @@ public class HibernateUtil
         	 AnnotationConfiguration config = new AnnotationConfiguration();
         	 
         	 config.addAnnotatedClass(CargaBean.class);
-        	 //config.addAnnotatedClass(ClienteBean.class);
+        	 config.addAnnotatedClass(ClienteBean.class);
         	 config.addAnnotatedClass(CostoBean.class);
         	 config.addAnnotatedClass(CuentaCorrienteBean.class);
         	 config.addAnnotatedClass(DepositoBean.class);
@@ -28,7 +28,6 @@ public class HibernateUtil
         	 config.addAnnotatedClass(HabilitadoBean.class);
         	 config.addAnnotatedClass(ItemRemitoBean.class);
         	 config.addAnnotatedClass(MovimientoBean.class);
-        	 config.addAnnotatedClass(OcacionalBean.class);
         	 config.addAnnotatedClass(ParticularBean.class);
         	 config.addAnnotatedClass(ProveedorBean.class);
         	 config.addAnnotatedClass(RegularBean.class);

@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class EmpleadoBean {
 	
 	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idEmpleado;
 	private int codEmpleado;
 	private String tipoDocumento;
@@ -16,6 +16,9 @@ public class EmpleadoBean {
 	private String apellido;
 	private String nombre;
 	private String funcion;
+	@ManyToOne
+	@JoinColumn(name="idSucursal", nullable=false)
+		private SucursalBean sucursales_empleado;
 	
 	
 

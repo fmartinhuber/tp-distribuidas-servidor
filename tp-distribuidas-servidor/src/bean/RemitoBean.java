@@ -1,18 +1,32 @@
 package bean;
+import java.util.ArrayList;
 import java.util.Date;
-
 import java.util.List;
+
 import javax.persistence.*;
 
-public class RemitoBean
-{
-	private Object numeroRemito;
+@Entity
+@Table(name="Remito")
+public class RemitoBean{
+	
+	@Id 
+	@GeneratedValue(strategy = GenerationType.AUTO)
+		private int idRemito;
 	private Date fechaEnvio;
-	private ClienteBean remitente;
-	private HabilitadoBean destinatario;
-	private SucursalBean sucursalOrigen;
-	private SucursalBean sucursalDestino;
-	private List<ItemRemitoBean> itemsRemito;
-
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="idCliente", nullable=false)
+		private ClienteBean remitente;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="idHabilitado", nullable=false)
+		private HabilitadoBean destinatario;
+	@OneToOne (cascade=CascadeType.ALL)
+	@PrimaryKeyJoinColumn
+		private SucursalBean sucursalOrigen;
+	@OneToOne (cascade=CascadeType.ALL)
+	@PrimaryKeyJoinColumn
+		private SucursalBean sucursalDestino;
+	@OneToMany (cascade=CascadeType.ALL, mappedBy="remitos")
+		private List<ItemRemitoBean> itemsRemito = new ArrayList<ItemRemitoBean>();
+	
 	
 }

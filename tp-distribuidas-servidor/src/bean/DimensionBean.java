@@ -7,13 +7,15 @@ import javax.persistence.*;
 public class DimensionBean{
 	
 	@Id
-	@GeneratedValue()
+	@GeneratedValue(strategy = GenerationType.AUTO)
 		private Integer idDimension;
 	private float alto;
 	private float ancho;
 	private float profundidad;
 	private float peso;
 	private float volumen;
+	
+	
 	
 	public DimensionBean(float alto, float ancho, float profundidad, float peso, float volumen) {
 		this.alto = alto;
