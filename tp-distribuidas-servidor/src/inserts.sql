@@ -4,6 +4,7 @@
 --3) Cambien la configuracion del Servidor a validate
 --Y ya tienen datos para trabajar con consultas hql
 
+
 --Dimension
 insert into Dimension (alto, ancho, peso, profundidad, volumen)
 values (10, 4, 1500, 15, 3500)
@@ -20,3 +21,6 @@ go
 
 
 --
+
+
+

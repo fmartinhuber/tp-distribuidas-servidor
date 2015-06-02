@@ -17,12 +17,12 @@ public class SolicitudDeCarga implements ISolicitudDeCarga{
 	private Direccion direccion;
 	private Date fechaEntregaProbable;
 	private Date fechaEntregaMaxima;
-	private File manifiesto; //Daro: Como pensamos manejar esto?. No es mas facil hacer un String?
+	private String manifiesto;
 	private String estadoSolcitud;
 	
 	public SolicitudDeCarga (Cliente cliente, List<Carga> cargas, 
 			List<Habilitado> habilitados, Direccion direccion, Date fechaEntregaProbable, 
-			Date fechaEntregaMaxima, File manifiesto, String estadoSolcitud) {
+			Date fechaEntregaMaxima, String manifiesto, String estadoSolcitud) {
 		this.cliente = cliente;
 		this.cargas = cargas;
 		this.habilitados = habilitados;
@@ -81,11 +81,11 @@ public class SolicitudDeCarga implements ISolicitudDeCarga{
 		this.fechaEntregaMaxima = fechaEntregaMaxima;
 	}
 
-	public File getManifiesto() {
+	public String getManifiesto() {
 		return manifiesto;
 	}
 
-	public void setManifiesto(File manifiesto) {
+	public void setManifiesto(String manifiesto) {
 		this.manifiesto = manifiesto;
 	}
 

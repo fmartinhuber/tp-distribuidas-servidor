@@ -21,7 +21,7 @@ public class SolicitudDeCargaConRetiroBean extends SolicitudDeCargaBean{
 	public SolicitudDeCargaConRetiroBean(ClienteBean cliente,
 			List<CargaBean> cargas, List<HabilitadoBean> habilitado,
 			DireccionBean destino, Date fechaEntregaProbable,
-			Date fechaEntregaMaxima, File manifiesto, String estadoSolicitud,
+			Date fechaEntregaMaxima, String manifiesto, String estadoSolicitud,
 			DireccionBean domicilioCarga, Date fechaRetiro, String rangoHorario) {
 		super(cliente, cargas, habilitado, destino, fechaEntregaProbable,
 				fechaEntregaMaxima, manifiesto, estadoSolicitud);

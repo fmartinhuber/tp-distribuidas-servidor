@@ -1,5 +1,4 @@
 package bean;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,7 +23,7 @@ public class SolicitudDeCargaBean {
 		private DireccionBean destino;
 	private Date fechaEntregaProbable;
 	private Date fechaEntregaMaxima;
-	private File manifiesto;
+	private String manifiesto;
 	private String estadoSolicitud;
 	@ManyToOne
 	@JoinColumn(name="idSucursal", nullable=false)
@@ -37,7 +36,7 @@ public class SolicitudDeCargaBean {
 	public SolicitudDeCargaBean(ClienteBean cliente, List<CargaBean> cargas,
 			List<HabilitadoBean> habilitado, DireccionBean destino,
 			Date fechaEntregaProbable, Date fechaEntregaMaxima,
-			File manifiesto, String estadoSolicitud) {
+			String manifiesto, String estadoSolicitud) {
 		super();
 		this.cliente = cliente;
 		this.cargas = cargas;
@@ -109,11 +108,11 @@ public class SolicitudDeCargaBean {
 		this.fechaEntregaMaxima = fechaEntregaMaxima;
 	}
 
-	public File getManifiesto() {
+	public String getManifiesto() {
 		return manifiesto;
 	}
 
-	public void setManifiesto(File manifiesto) {
+	public void setManifiesto(String manifiesto) {
 		this.manifiesto = manifiesto;
 	}
 
