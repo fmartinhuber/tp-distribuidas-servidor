@@ -23,9 +23,6 @@ public class DireccionBean{
 	
 	
 	
-	
-	
-	
 	public Integer getIdDireccion() {
 		return idDireccion;
 	}

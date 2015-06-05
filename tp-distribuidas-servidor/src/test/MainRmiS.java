@@ -12,19 +12,16 @@ public abstract class MainRmiS {
 		new BusinessServer().publicarServicio();
 		
 		
+		//SI QUERES PROBAR COMO FUNCIONA DESCOMENTA ESTA PARTE
 		
-		//Prueba dario, pegandole directamente al servidor sin pasar por rmi, para debugear entitys
-		DireccionDto miDireccionDto = new DireccionDto("Argentina", "Buenos Aires", "Parque Chacabuco", 1440, "Las casas", 7090, 4, "4B");
+		//Prueba by Daro, pegandole directamente al servidor sin pasar por rmi, para debugear entitys, esto funciona bien
+		/*DireccionDto miDireccionDto = new DireccionDto("Argentina", "Buenos Aires", "Parque Chacabuco", 1440, "Rivadavia", 7090, 4, "4B");
 		ParticularDto miParticularDto = new ParticularDto("dni", "34108511", "Nieto", "Dario", miDireccionDto);
 		Particular miParticularNegocio = new Particular(miParticularDto);
-		miParticularNegocio.guardar(miParticularDto.getTipoDocumento(), miParticularDto.getNroDocumento());
+		miParticularNegocio.guardar(miParticularDto.getTipoDocumento(), miParticularDto.getNroDocumento());*/
 		
-		//Cliente no existe, es heredado por Particular y Empresa, cambio todo para que persista Empleados y Particulares
-		/*
-		ClienteDto miClienteDto = new ClienteDto("dni", "34000000");
-		Cliente miClienteNegocio = new Cliente(miClienteDto);
-		miClienteNegocio.guardar();
-		*/
+		//OJO!, si haces inserts hardcodeados desde el codigo como este antes de insertar los valores por sql en la BD puede haber inconsistencias
+		
 	}
 
 }
