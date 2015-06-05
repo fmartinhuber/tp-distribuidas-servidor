@@ -4,8 +4,8 @@ public class Empleado
 {
 	private int codEmpleado;
 	private String tipoDocumento;
-	private int nroDocumento;
-	private int CUIL;
+	private String nroDocumento;
+	private String CUIL;
 	private String nombre;
 	private String apellido;
 	private String funcion;
@@ -18,11 +18,11 @@ public class Empleado
 		this.tipoDocumento = tipoDocumento;
 	}
 	
-	public void setNroDocumento(int documento){
+	public void setNroDocumento(String documento){
 		this.nroDocumento = documento;
 	}
 	
-	public void setCUIL(int cuil){
+	public void setCUIL(String cuil){
 		this.CUIL = cuil;
 	}
 	
@@ -46,11 +46,11 @@ public class Empleado
 		return this.tipoDocumento;
 	}
 	
-	public int getNroDoc(){
+	public String getNroDoc(){
 		return this.nroDocumento;
 	}
 	
-	public int getCUIL(){
+	public String getCUIL(){
 		return this.CUIL;
 	}
 	
@@ -65,5 +65,6 @@ public class Empleado
 	public String getFuncion(){
 		return this.funcion;
 	}
+	
 	//TODO: Agregar más clases de negocio para el ABM
 }

@@ -1,4 +1,5 @@
 package bean;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -6,10 +7,14 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name="SolicitudDeCarga")
-public class SolicitudDeCargaBean {
+public class SolicitudDeCargaBean implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 		private int idSolicitudDeCarga;
 	@OneToOne(cascade = CascadeType.ALL)
 	@PrimaryKeyJoinColumn

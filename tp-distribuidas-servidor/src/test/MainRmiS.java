@@ -15,10 +15,10 @@ public abstract class MainRmiS {
 		//SI QUERES PROBAR COMO FUNCIONA DESCOMENTA ESTA PARTE
 		
 		//Prueba by Daro, pegandole directamente al servidor sin pasar por rmi, para debugear entitys, esto funciona bien
-		/*DireccionDto miDireccionDto = new DireccionDto("Argentina", "Buenos Aires", "Parque Chacabuco", 1440, "Rivadavia", 7090, 4, "4B");
+		DireccionDto miDireccionDto = new DireccionDto("Argentina", "Buenos Aires", "Parque Chacabuco", 1440, "Rivadavia", 7090, 4, "4B");
 		ParticularDto miParticularDto = new ParticularDto("dni", "34108511", "Nieto", "Dario", miDireccionDto);
 		Particular miParticularNegocio = new Particular(miParticularDto);
-		miParticularNegocio.guardar(miParticularDto.getTipoDocumento(), miParticularDto.getNroDocumento());*/
+		miParticularNegocio.guardar(miParticularDto.getTipoDocumento(), miParticularDto.getNroDocumento());
 		
 		//OJO!, si haces inserts hardcodeados desde el codigo como este antes de insertar los valores por sql en la BD puede haber inconsistencias
 		

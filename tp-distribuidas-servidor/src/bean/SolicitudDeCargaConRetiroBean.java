@@ -1,5 +1,4 @@
 package bean;
-import java.io.File;
 import java.util.Date;
 import java.util.List;
 
@@ -9,6 +8,8 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name="SolicitudDeCargaConRetiro")
 public class SolicitudDeCargaConRetiroBean extends SolicitudDeCargaBean{
+	
+	private static final long serialVersionUID = 1L;
 	
 	@OneToOne
 	@JoinColumn(name="idDireccion", nullable=false)

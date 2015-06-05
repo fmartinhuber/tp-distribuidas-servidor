@@ -11,8 +11,8 @@ public class EmpleadoBean {
 		private int idEmpleado;
 	private int codEmpleado;
 	private String tipoDocumento;
-	private int nroDocumento;
-	private int CUIL;
+	private String nroDocumento;
+	private String CUIL;
 	private String apellido;
 	private String nombre;
 	private String funcion;
@@ -23,7 +23,7 @@ public class EmpleadoBean {
 	
 
 	public EmpleadoBean(int codEmpleado, String tipoDocumento,
-			int nroDocumento, int CUIL, String apellido, String nombre,
+			String nroDocumento, String CUIL, String apellido, String nombre,
 			String funcion) {
 		this.codEmpleado = codEmpleado;
 		this.tipoDocumento = tipoDocumento;
@@ -46,11 +46,11 @@ public class EmpleadoBean {
 		this.tipoDocumento = tipoDocumento;
 	}
 	
-	public void setNroDocumento(int documento){
+	public void setNroDocumento(String documento){
 		this.nroDocumento = documento;
 	}
 	
-	public void setCUIL(int cuil){
+	public void setCUIL(String cuil){
 		this.CUIL = cuil;
 	}
 	
@@ -74,11 +74,11 @@ public class EmpleadoBean {
 		return this.tipoDocumento;
 	}
 	
-	public int getNroDoc(){
+	public String getNroDoc(){
 		return this.nroDocumento;
 	}
 	
-	public int getCUIL(){
+	public String getCUIL(){
 		return this.CUIL;
 	}
 	

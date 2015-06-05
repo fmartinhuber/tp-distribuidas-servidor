@@ -9,6 +9,11 @@
 -- DROPS --
 -----------
 -- Para limpiar la bd si ya tenes tablas creadas e hiciste quilombo
+
+-----------
+-- DROPS --
+-----------
+-- Para limpiar la bd si ya tenes tablas creadas e hiciste quilombo
 drop table Empleado
 go
 drop table Empresa
@@ -22,8 +27,6 @@ go
 drop table Particular
 go
 drop table Remito
-go
-drop table Servicio
 go
 drop table SolicitudDeCargaConRetiro
 go
@@ -41,19 +44,21 @@ drop table Dimension
 go
 drop table Habilitado
 go
-drop table Proveedor
-go
 drop table SolicitudDeCarga
 go
 drop table Vehiculo
-go
-drop table Direccion
 go
 drop table Sucursal
 go
 drop table Costo
 go
 drop table hibernate_sequences
+go
+drop table Servicio
+go
+drop table Proveedor
+go
+drop table Direccion
 go
 
 
@@ -140,17 +145,33 @@ go
 
 
 --Direccion
+--1
 insert into Direccion (calle, codigoPostal, departamento, localidad, numero, pais, piso, provincia)
-values ('Las Casas', 1450, 8, 'Capital Federal', 11, 'Argentina', 2, 'Buenos Aires')
+values ('Las Casas', 1450, 8, 'Capital Federal', 1100, 'Argentina', 2, 'Buenos Aires')
 go
+--2
 insert into Direccion (calle, codigoPostal, departamento, localidad, numero, pais, piso, provincia)
-values ('Moreti', 850, 32, 'San salvador de Jujuy', 49, 'Argentina', 8, 'Jujuy')
+values ('Moreti', 850, 32, 'San salvador de Jujuy', 490, 'Argentina', 8, 'Jujuy')
 go
+--3
 insert into Direccion (calle, codigoPostal, departamento, localidad, numero, pais, piso, provincia)
-values ('Sarmiento', 448, 14, 'Resistencia', 21, 'Argentina', 1, 'Chaco')
+values ('Sarmiento', 448, 14, 'Resistencia', 2130, 'Argentina', 1, 'Chaco')
 go
+--4
 insert into Direccion (calle, codigoPostal, departamento, localidad, numero, pais, piso, provincia)
-values ('Paso', 850, 55, 'Rosario', 26, 'Argentina', 1, 'Santa Fe')
+values ('Paso', 850, 55, 'Rosario', 2660, 'Argentina', 1, 'Santa Fe')
+go
+--5
+insert into Direccion (calle, codigoPostal, departamento, localidad, numero, pais, piso, provincia)
+values ('Rosas', 1478, 9, 'La Plata', 440, 'Argentina', 3, 'Buenos Aires')
+go
+--6
+insert into Direccion (calle, codigoPostal, departamento, localidad, numero, pais, piso, provincia)
+values ('San juan', 1585, 65, 'Capital Federal', 2667, 'Argentina', 1, 'Buenos Aires')
+go
+--7
+insert into Direccion (calle, codigoPostal, departamento, localidad, numero, pais, piso, provincia)
+values ('Bolivar', 1456, 12, 'Capital Federal', 1358, 'Argentina', 1, 'Buenos Aires')
 go
 
 
@@ -196,5 +217,35 @@ values ('Ravilo', 117)
 go
 
 
+--Empleado
+insert into Empleado (nombre, apellido, tipoDocumento, nroDocumento, codEmpleado, CUIL, funcion, idSucursal)
+values ('Juan Carlos', 'Perez', 'DNI', '28908404', 88590, '20289084040', 'Analista Funcional', 1)
+go
+insert into Empleado (nombre, apellido, tipoDocumento, nroDocumento, codEmpleado, CUIL, funcion, idSucursal)
+values ('Ramiro', 'Fryda', 'DNI', '33887951', 48930, '20338879515', 'Vago', 2)
+go
+insert into Empleado (nombre, apellido, tipoDocumento, nroDocumento, codEmpleado, CUIL, funcion, idSucursal)
+values ('Florencia', 'Menendes', 'DNI', '35013914', 35471, '20350139149', 'Programador', 1)
+go
 
+
+--Proveedor
+insert into Proveedor (idDireccion, tipoDocumento, numeroDocumento, razonSocial)
+values (4, 'CUIT', '25899411350', 'Ala del sur S.A')
+go
+insert into Proveedor (idDireccion, tipoDocumento, numeroDocumento, razonSocial)
+values (5, 'CUIT', '29987745130', 'Expreso Raind')
+go
+insert into Proveedor (idDireccion, tipoDocumento, numeroDocumento, razonSocial)
+values (6, 'CUIT', '55098879110', 'Youalma')
+go
+insert into Proveedor (idDireccion, tipoDocumento, numeroDocumento, razonSocial)
+values (7, 'CUIT', '99006655874', 'Ademeriva')
+go
+
+
+--Vehiculo
+insert into Vehiculo (idSucursal, anio, capacidadDisponible, caracteristicas, cedulaVerde, disponibilidadTara, disponibilidadVolumen, dominio, enMantenimiento, enViaje, marca, modelo, peso, tara, vencimientoCedulaVerde, volumenDeCarga)
+values (1, 1994, 4500, 'Camion refrigerado', 90957716615, 1500, 7000, 'Buenos Aires', 0, 0, 'Ford', 'F3000', 2400, 9000, '01/08/2017', 14000)
+go
 

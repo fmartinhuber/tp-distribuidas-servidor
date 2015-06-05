@@ -12,7 +12,7 @@ public class ProveedorBean{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idProveedor;
 	private String tipoDocumento;
-	private int numeroDocumento;
+	private String numeroDocumento;
 	private String razonSocial;
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="idDireccion", nullable=false)
@@ -23,7 +23,7 @@ public class ProveedorBean{
 	
 	
 	public ProveedorBean(int idProveedor, String tipoDocumento,
-			int numeroDocumento, String razonSocial,
+			String numeroDocumento, String razonSocial,
 			DireccionBean domicilioComercial,
 			List<ServicioBean> serviciosProvistos) {
 		super();
@@ -55,11 +55,11 @@ public class ProveedorBean{
 		this.tipoDocumento = tipoDocumento;
 	}
 
-	public int getNumeroDocumento() {
+	public String getNumeroDocumento() {
 		return numeroDocumento;
 	}
 
-	public void setNumeroDocumento(int numeroDocumento) {
+	public void setNumeroDocumento(String numeroDocumento) {
 		this.numeroDocumento = numeroDocumento;
 	}
 

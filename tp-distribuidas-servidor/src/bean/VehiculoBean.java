@@ -1,6 +1,5 @@
 package bean;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.*;
 
@@ -15,13 +14,12 @@ public class VehiculoBean{
 	private String marca;
 	private String modelo;
 	private int anio;
-	private int cedulaVerde;
+	private String cedulaVerde;
 	private Date vencimientoCedulaVerde;
 	private float peso;
 	private float tara;
 	private float volumenDeCarga;
 	private String caracteristicas;
-	private String PlanMantenimientoBean;
 	private float disponibilidadVolumen;
 	private float disponibilidadTara;
 	private float capacidadDisponible;
@@ -31,13 +29,16 @@ public class VehiculoBean{
 	@JoinColumn(name="idSucursal", nullable=false)
 		private SucursalBean sucursales_vehiculos;
 	
+
+
 	public VehiculoBean(int idVehiculo, String dominio, String marca,
-			String modelo, int anio, int cedulaVerde,
+			String modelo, int anio, String cedulaVerde,
 			Date vencimientoCedulaVerde, float peso, float tara,
 			float volumenDeCarga, String caracteristicas,
-			String planMantenimientoBean, float disponibilidadVolumen,
-			float disponibilidadTara, float capacidadDisponible,
-			boolean enMantenimiento, boolean enViaje) {
+			float disponibilidadVolumen, float disponibilidadTara,
+			float capacidadDisponible, boolean enMantenimiento,
+			boolean enViaje, SucursalBean sucursales_vehiculos) {
+		super();
 		this.idVehiculo = idVehiculo;
 		this.dominio = dominio;
 		this.marca = marca;
@@ -49,14 +50,14 @@ public class VehiculoBean{
 		this.tara = tara;
 		this.volumenDeCarga = volumenDeCarga;
 		this.caracteristicas = caracteristicas;
-		PlanMantenimientoBean = planMantenimientoBean;
 		this.disponibilidadVolumen = disponibilidadVolumen;
 		this.disponibilidadTara = disponibilidadTara;
 		this.capacidadDisponible = capacidadDisponible;
 		this.enMantenimiento = enMantenimiento;
 		this.enViaje = enViaje;
+		this.sucursales_vehiculos = sucursales_vehiculos;
 	}
-
+	
 	public VehiculoBean() {
 		
 	}
@@ -101,11 +102,11 @@ public class VehiculoBean{
 		this.anio = anio;
 	}
 
-	public int getCedulaVerde() {
+	public String getCedulaVerde() {
 		return cedulaVerde;
 	}
 
-	public void setCedulaVerde(int cedulaVerde) {
+	public void setCedulaVerde(String cedulaVerde) {
 		this.cedulaVerde = cedulaVerde;
 	}
 
@@ -147,14 +148,6 @@ public class VehiculoBean{
 
 	public void setCaracteristicas(String caracteristicas) {
 		this.caracteristicas = caracteristicas;
-	}
-
-	public String getPlanMantenimientoBean() {
-		return PlanMantenimientoBean;
-	}
-
-	public void setPlanMantenimientoBean(String planMantenimientoBean) {
-		PlanMantenimientoBean = planMantenimientoBean;
 	}
 
 	public float getDisponibilidadVolumen() {
