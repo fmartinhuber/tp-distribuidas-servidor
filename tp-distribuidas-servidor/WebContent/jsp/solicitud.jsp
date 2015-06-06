@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+	
+	
     <title>Distribuidas</title>
 
     <!-- Bootstrap Core CSS -->
@@ -56,21 +57,28 @@
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
-
+		<jsp:useBean id="solicitud" class="dto.SolicitudDeCargaDto" scope="request"/>
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Solicitud de Carga</h1>
-                        <form action="altaSolicitud">
+                        <form action="altaSolicitud" method="get">
 						<table>
-						<tr>
-						<td>
-						Cliente <input>
-						</td>
+						<tr><td>Dni: <input type="dni" >Vehiculo: <input ></td></tr>
+						<tr><td>Fecha Desde: <input type="dni" ></td></tr>
+						<tr><td>Fecha Hasta: <input type="dni" ></td></tr>
+						<tr><td>Pais: <input type="pais"/> </td></tr>
+						<tr><td>Provincia: <input type="provincia"/> </td></tr>
+						<tr><td>Localidad: <input type="localidad"/> </td></tr>
+						<tr><td>Calle: <input type="calle"/> </td></tr>
+						<tr><td>numero: <input type="numero"/> </td></tr>
+						<tr><td>codigo Postal: <input type="codigoPostal"/> </td></tr>
 						
-						</tr>
+						
+						<tr><td><input type="submit" value="Aceptar"><input type="submit" value="Cancelar"></td></tr>
+						
 						</table>
 						</form>
 

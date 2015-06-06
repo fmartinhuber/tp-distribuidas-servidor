@@ -8,7 +8,17 @@
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
-	<welcome-file>main.jsp</welcome-file>
-	<welcome-file>main.html</welcome-file>
+    <welcome-file>main.jsp</welcome-file>
+    <welcome-file>main.html</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>solicitudAction</display-name>
+    <servlet-name>solicitudAction</servlet-name>
+    <servlet-class>actions.solicitudAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>solicitudAction</servlet-name>
+    <url-pattern>/solicitudAction</url-pattern>
+  </servlet-mapping>
 </web-app>
