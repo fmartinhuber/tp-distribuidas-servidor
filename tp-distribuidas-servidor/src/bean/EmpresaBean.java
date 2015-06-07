@@ -1,23 +1,19 @@
 package bean;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorValue("Empresa")
 @Table(name="Empresa")
 public class EmpresaBean extends ClienteBean{
-
-	private static final long serialVersionUID = 1L;
 	
 	private String razonSocial;
 	@OneToOne
-	@JoinColumn(name="idDireccion", nullable=false)
+	@JoinColumn(name="idDireccion", nullable=true)
 		private DireccionBean domicilioComercial;
 	private String condiciónIVA;
-	@OneToMany (cascade=CascadeType.ALL, mappedBy="empresas")
-		public List<DireccionBean> destinosHabilitados = new ArrayList<DireccionBean>();
+	/*@OneToMany (cascade=CascadeType.ALL, mappedBy="empresas")
+		public List<DireccionBean> destinosHabilitados = new ArrayList<DireccionBean>();*/
 	
 	
 	
@@ -57,12 +53,12 @@ public class EmpresaBean extends ClienteBean{
 		this.condiciónIVA = condiciónIVA;
 	}
 
-	public List<DireccionBean> getDestinosHabilitados() {
+	/*public List<DireccionBean> getDestinosHabilitados() {
 		return destinosHabilitados;
 	}
 
 	public void setDestinosHabilitados(List<DireccionBean> destinosHabilitados) {
 		this.destinosHabilitados = destinosHabilitados;
-	}
+	}*/
 	
 }

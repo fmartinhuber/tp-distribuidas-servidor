@@ -1,22 +1,20 @@
 package bean;
 
-import java.io.Serializable;
-
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class ClienteBean implements Serializable{
-
-	private static final long serialVersionUID = 1L;
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="tipoCliente", discriminatorType=DiscriminatorType.STRING)
+@Table(name="Cliente")
+public abstract class ClienteBean{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 		protected int idCliente;
 	protected String tipoDocumento;
 	protected String nroDocumento;
-	
-	
+
+
 	
 	public ClienteBean(String tipoDocumento, String nroDocumento) {
 		this.tipoDocumento = tipoDocumento;

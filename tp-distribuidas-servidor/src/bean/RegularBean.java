@@ -3,14 +3,12 @@ package bean;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorValue("EmpresaRegular")
 @Table(name="Empresa_Regular")
 public class RegularBean extends EmpresaBean{
-
-	private static final long serialVersionUID = 1L;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="idCuentaCorriente", nullable=false)
+	@JoinColumn(name="idCuentaCorriente", nullable=true)
 		private CuentaCorrienteBean cuentaCorriente;
 	private String modoPago;
 	private float montoAutorizacion;

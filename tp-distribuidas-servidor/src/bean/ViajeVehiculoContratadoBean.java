@@ -6,11 +6,9 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorValue("Contratado")
 @Table(name="ViajeVehiculoContratado")
 public class ViajeVehiculoContratadoBean extends ViajeBean{
-
-	private static final long serialVersionUID = 1L;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="idProveedor")

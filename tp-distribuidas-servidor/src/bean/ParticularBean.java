@@ -3,18 +3,16 @@ package bean;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorValue("Particular")
 @Table(name="Particular")
 public class ParticularBean extends ClienteBean{
-	
-	private static final long serialVersionUID = 1L;
-	
+		
 	private String apellido;
 	private String nombre;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="idDireccion", nullable=false)
+	@JoinColumn(name="idDireccion", nullable=true)
 		private DireccionBean direccion;
-		
+
 	
 	
 	public ParticularBean(String tipoDocumento, String nroDocumento,

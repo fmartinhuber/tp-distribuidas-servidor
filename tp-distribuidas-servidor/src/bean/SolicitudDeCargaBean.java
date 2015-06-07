@@ -1,5 +1,4 @@
 package bean;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -7,35 +6,42 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="tipoSolicitud", discriminatorType=DiscriminatorType.STRING)
 @Table(name="SolicitudDeCarga")
-public class SolicitudDeCargaBean implements Serializable{
-
-	private static final long serialVersionUID = 1L;
+public class SolicitudDeCargaBean{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 		private int idSolicitudDeCarga;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 		private ClienteBean cliente;
+	
 	@OneToMany (cascade=CascadeType.ALL, mappedBy="solicitudesdecarga_carga")
 		private List<CargaBean> cargas = new ArrayList<CargaBean>();
+	
 	@OneToMany (cascade=CascadeType.ALL, mappedBy="solicitudesdecarga_habilitado")
 		private List<HabilitadoBean> habilitado = new ArrayList<HabilitadoBean>();
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 		private DireccionBean destino;
+	
 	private Date fechaEntregaProbable;
 	private Date fechaEntregaMaxima;
 	private String manifiesto;
 	private String estadoSolicitud;
+	
 	@ManyToOne
 	@JoinColumn(name="idSucursal", nullable=false)
 		private SucursalBean sucursales_solicituddecarga;
+	
 	@ManyToOne
 	@JoinColumn(name="idViaje", nullable=false)
 		private ViajeBean viajes_solicitudes;
+	
 	
 	
 	public SolicitudDeCargaBean(ClienteBean cliente, List<CargaBean> cargas,

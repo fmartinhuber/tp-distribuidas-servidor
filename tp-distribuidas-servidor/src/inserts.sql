@@ -5,10 +5,7 @@
 --3) Cambien la configuracion del Servidor a validate
 --Y ya tienen datos para trabajar con consultas hql
 
------------
--- DROPS --
------------
--- Para limpiar la bd si ya tenes tablas creadas e hiciste quilombo
+
 
 -----------
 -- DROPS --
@@ -246,6 +243,11 @@ go
 
 --Vehiculo
 insert into Vehiculo (idSucursal, anio, capacidadDisponible, caracteristicas, cedulaVerde, disponibilidadTara, disponibilidadVolumen, dominio, enMantenimiento, enViaje, marca, modelo, peso, tara, vencimientoCedulaVerde, volumenDeCarga)
-values (1, 1994, 4500, 'Camion refrigerado', 90957716615, 1500, 7000, 'Buenos Aires', 0, 0, 'Ford', 'F3000', 2400, 9000, '01/08/2017', 14000)
+values (1, 1994, 4500, 'Camion con caja refrigerado', 90957716615, 1500, 7000, 'Buenos Aires', 0, 0, 'Ford', 'F3000', 2400, 9000, '01/08/2017', 14000)
 go
+insert into Vehiculo (idSucursal, anio, capacidadDisponible, caracteristicas, cedulaVerde, disponibilidadTara, disponibilidadVolumen, dominio, enMantenimiento, enViaje, marca, modelo, peso, tara, vencimientoCedulaVerde, volumenDeCarga)
+values (2, 1985, 6500, 'Camion con caja no refrigerado', 64131356984, 1800, 7400, 'Buenos Aires', 1, 0, 'Chevrolet', 'A4500', 2550, 9800, '14/11/2016', 15000)
+go
+
+
 

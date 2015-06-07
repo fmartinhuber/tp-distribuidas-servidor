@@ -17,9 +17,9 @@ public class DireccionBean{
 	private int numero;
 	private int piso;
 	private String departamento;
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name="idEmpresa")//, nullable=false) //Rompe al poner null nose porque, safamos asi, despues ver
-		private EmpresaBean empresas;
+		private EmpresaBean empresas;*/
 	
 	
 	
@@ -77,12 +77,12 @@ public class DireccionBean{
 	public void setDepartamento(String departamento) {
 		this.departamento = departamento;
 	}
-	public EmpresaBean getEmpresas() {
+	/*public EmpresaBean getEmpresas() {
 		return empresas;
 	}
 	public void setEmpresas(EmpresaBean empresas) {
 		this.empresas = empresas;
-	}
+	}*/
 
 
 	

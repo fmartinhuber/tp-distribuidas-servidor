@@ -5,14 +5,12 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorValue("ConRetiro")
 @Table(name="SolicitudDeCargaConRetiro")
 public class SolicitudDeCargaConRetiroBean extends SolicitudDeCargaBean{
 	
-	private static final long serialVersionUID = 1L;
-	
 	@OneToOne
-	@JoinColumn(name="idDireccion", nullable=false)
+	@JoinColumn(name="idDireccion", nullable=true)
 		private DireccionBean domicilioCarga;
 	private Date fechaRetiro;
 	private String rangoHorario;

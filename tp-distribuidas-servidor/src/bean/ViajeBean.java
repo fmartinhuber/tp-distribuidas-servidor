@@ -1,5 +1,4 @@
 package bean;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -7,10 +6,10 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class ViajeBean implements Serializable{
-
-	private static final long serialVersionUID = 1L;
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="tipoViaje", discriminatorType=DiscriminatorType.STRING)
+@Table(name="Viaje")
+public abstract class ViajeBean{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
