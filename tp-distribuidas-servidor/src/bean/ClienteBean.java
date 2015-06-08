@@ -6,10 +6,10 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="tipoCliente", discriminatorType=DiscriminatorType.STRING)
 @Table(name="Cliente")
-public abstract class ClienteBean{
+public class ClienteBean{
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 		protected int idCliente;
 	protected String tipoDocumento;
 	protected String nroDocumento;

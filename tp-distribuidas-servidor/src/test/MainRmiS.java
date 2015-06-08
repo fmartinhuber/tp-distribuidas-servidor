@@ -15,8 +15,8 @@ public abstract class MainRmiS {
 		//SI QUERES PROBAR COMO FUNCIONA DESCOMENTA ESTA PARTE
 		
 		//Prueba by Daro, pegandole directamente al servidor sin pasar por rmi, para debugear entitys, esto funciona bien
-		DireccionDto miDireccionDto = new DireccionDto("Argentina", "Buenos Aires", "Parque Chacabuco", 1440, "Rivadavia", 7090, 4, "4B");
-		ParticularDto miParticularDto = new ParticularDto("dni", "34108511", "Nieto", "Dario", miDireccionDto);
+		DireccionDto miDireccionDto = new DireccionDto("Argentina", "Buenos Aires", "Flores", 1440, "Rivadavia", 7090, 4, "4B");
+		ParticularDto miParticularDto = new ParticularDto("dni", "12345678", "Perez", "Juan", miDireccionDto);
 		Particular miParticularNegocio = new Particular(miParticularDto);
 		miParticularNegocio.guardar(miParticularDto.getTipoDocumento(), miParticularDto.getNroDocumento());
 		

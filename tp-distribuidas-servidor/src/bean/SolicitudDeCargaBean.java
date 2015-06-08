@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class SolicitudDeCargaBean{
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idSolicitudDeCarga;
 	
 	@OneToOne(cascade = CascadeType.ALL)

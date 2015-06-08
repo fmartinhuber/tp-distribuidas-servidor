@@ -9,10 +9,10 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="tipoViaje", discriminatorType=DiscriminatorType.STRING)
 @Table(name="Viaje")
-public abstract class ViajeBean{
+public class ViajeBean{
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 		protected int idViaje;
 	@OneToOne (cascade=CascadeType.ALL)
 	@JoinColumn(name="idSucursal")
