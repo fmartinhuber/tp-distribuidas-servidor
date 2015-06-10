@@ -1,6 +1,5 @@
 package negocio;
 
-import java.io.File;
 import bean.CargaBean;
 import bean.DimensionBean;
 import dao.CargaDao;
@@ -15,10 +14,10 @@ public class Carga{
 	private String condicionViaje;
 	private String textoManipulacion;
 	private String permiso;
-	private File archivoPermiso;
+	private String archivoPermiso;
 	
 	public Carga(Dimension dimension, boolean apilable, int cantidadApilable, String fragilidad, String tratamiento,
-			String condicionViaje, String textoManipulacion, String permiso, File archivoPermiso) {
+			String condicionViaje, String textoManipulacion, String permiso, String archivoPermiso) {
 		this.dimension = dimension;
 		this.apilable = apilable;
 		this.cantidadApilable = cantidadApilable;
@@ -30,12 +29,12 @@ public class Carga{
 		this.archivoPermiso = archivoPermiso;
 	}
 	
-	/*public void guardar(){
-		CargaBean cargaBean = new CargaBean (dimensionNegocioTOdimensionBean(this.dimension), this.apilable, 
+	public void guardar(){
+		CargaBean cargaBean = new CargaBean (cantidadApilable, dimensionNegocioTOdimensionBean(this.dimension), this.apilable, 
 				this.cantidadApilable, this.fragilidad, this.tratamiento, this.condicionViaje, 
-				this.textoManipulacion, this.permiso, this.archivoPermiso);		
+				this.textoManipulacion, this.permiso, this.archivoPermiso, null, null);		
 		CargaDao.getInstancia().guardar(cargaBean);
-	}*/
+	}
 
 	public Dimension getDimension() {
 		return dimension;
@@ -101,11 +100,11 @@ public class Carga{
 		this.permiso = permiso;
 	}
 
-	public File getArchivoPermiso() {
+	public String getArchivoPermiso() {
 		return archivoPermiso;
 	}
 
-	public void setArchivoPermiso(File archivoPermiso) {
+	public void setArchivoPermiso(String archivoPermiso) {
 		this.archivoPermiso = archivoPermiso;
 	}
 

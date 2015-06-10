@@ -1,9 +1,7 @@
 package negocio;
 
 public class Dimension{
-	
-	private static final long serialVersionUID = 1L;
-	
+		
 	private float alto;
 	private float ancho;
 	private float profundidad;
@@ -57,8 +55,5 @@ public class Dimension{
 	public void setVolumen(float volumen) {
 		this.volumen = volumen;
 	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	
 }

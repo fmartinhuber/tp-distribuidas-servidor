@@ -10,7 +10,7 @@ public class HabilitadoBean{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idHabilitado;
 	private String tipoDocumento;
-	private int nroDocumento;
+	private String nroDocumento;
 	private String ApellidoNombre;
 	@ManyToOne
 	@JoinColumn(name="idSolicitudDeCarga", nullable=false)
@@ -18,7 +18,7 @@ public class HabilitadoBean{
 	
 	
 	
-	public HabilitadoBean(String tipoDocumento, int nroDocumento, String apellidoNombre) {
+	public HabilitadoBean(String tipoDocumento, String nroDocumento, String apellidoNombre) {
 		super();
 		this.tipoDocumento = tipoDocumento;
 		this.nroDocumento = nroDocumento;
@@ -35,10 +35,10 @@ public class HabilitadoBean{
 	public void setTipoDocumento(String tipoDocumento) {
 		this.tipoDocumento = tipoDocumento;
 	}
-	public int getNroDocumento() {
+	public String getNroDocumento() {
 		return nroDocumento;
 	}
-	public void setNroDocumento(int nroDocumento) {
+	public void setNroDocumento(String nroDocumento) {
 		this.nroDocumento = nroDocumento;
 	}
 	public String getApellidoNombre() {

@@ -3,10 +3,10 @@ package negocio;
 public class Habilitado{
 	
 	private String tipoDocumento;
-	private int nroDocumento;
+	private String nroDocumento;
 	private String apellidoNombre;
 	
-	public Habilitado (String tipoDocumento, int nroDocumento, String apellidoNombre) {
+	public Habilitado (String tipoDocumento, String nroDocumento, String apellidoNombre) {
 		this.tipoDocumento = tipoDocumento;
 		this.nroDocumento = nroDocumento;
 		this.apellidoNombre = apellidoNombre;
@@ -20,11 +20,11 @@ public class Habilitado{
 		this.tipoDocumento = tipoDocumento;
 	}
 
-	public int getNroDocumento() {
+	public String getNroDocumento() {
 		return nroDocumento;
 	}
 
-	public void setNroDocumento(int nroDocumento) {
+	public void setNroDocumento(String nroDocumento) {
 		this.nroDocumento = nroDocumento;
 	}
 

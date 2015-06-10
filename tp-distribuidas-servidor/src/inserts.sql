@@ -162,6 +162,15 @@ go
 insert into Direccion (calle, codigoPostal, departamento, localidad, numero, pais, piso, provincia)
 values ('Bolivar', 1456, 12, 'Capital Federal', 1358, 'Argentina', 1, 'Buenos Aires')
 go
+--8
+insert into Direccion (calle, codigoPostal, departamento, localidad, numero, pais, piso, provincia)
+values ('Paisandu', 772, 09, 'Capital Federal', 5580, 'Argentina', 12, 'Buenos Aires')
+go
+--9
+insert into Direccion (calle, codigoPostal, departamento, localidad, numero, pais, piso, provincia)
+values ('Meaquiwa', 123, 55, 'Mar del Plata', 557, 'Argentina', 1, 'Buenos Aires')
+go
+
 
 
 --Empresa
@@ -269,7 +278,6 @@ values ('ViajeVehiculoPropio', null, '17/12/2015', '29/08/2015', '30/08/2015', n
 go
 
 
-
 --Servicio
 insert into Servicio (tipoServicio, denominacion, idProveedor, idViaje)
 values ('Que va aca?', 'Nose', 3, 1)
@@ -279,3 +287,52 @@ values ('Que va aca???', 'Nose!!', 4, 2)
 go
 
 
+--SolicitudDeCarga (SolicitudDeCarga comun, SolicitudDeCargaConRetiro)
+insert into SolicitudDeCarga (tipoSolicitud, estadoSolicitud, fechaEntregaMaxima, fechaEntregaProbable, fechaRetiro, manifiesto, rangoHorario, idDireccion, idSucursal, idViaje)
+values ('ConRetiro', 'Pendiente', '14/05/2016', '11/05/2016', '12/05/2016', 'Solicitud de Carga de 14 cristales templados', '11:00 a 22:00', 8, 4, 1)
+go
+insert into SolicitudDeCarga (tipoSolicitud, estadoSolicitud, fechaEntregaMaxima, fechaEntregaProbable, fechaRetiro, manifiesto, rangoHorario, idDireccion, idSucursal, idViaje)
+values ('', 'Pendiente', '16/08/2016', '13/08/2016', null, 'Solicitud de Carga de muebles varios', null, 9, 5, 2)
+go
+
+
+--Carga
+insert into Carga (apilable, archivoPermiso, cantidadApilable, condicionViaje, fragilidad, idDeposito, idDimension, idSolicitudDeCarga, permiso, textoManipulacion, tratamiento)
+values (1, 'Carga autorizada por Matias Gorbalgo', 8, 'Carga refrigerada', 'Muy Fragil', 2, 1, 1, 'Habilitado', 'La carga debe ser entregada en condiciones de refrigeracion y fragilidad', 'Que pongo aca?')
+go
+insert into Carga (apilable, archivoPermiso, cantidadApilable, condicionViaje, fragilidad, idDeposito, idDimension, idSolicitudDeCarga, permiso, textoManipulacion, tratamiento)
+values (0, 'Carga autorizada por Carlos Gramajo', 0, 'Carga pesada', '', 4, 2, 1, 'Habilitado', 'La carga debe ser entregada en condiciones, no es fragil', 'Que pongo aca???')
+go
+
+
+--Habilitado
+insert into Habilitado (tipoDocumento, nroDocumento, ApellidoNombre, idSolicitudDeCarga)
+values ('DNI', 34108511, 'Nieto Dario', 1)
+go
+insert into Habilitado (tipoDocumento, nroDocumento, ApellidoNombre, idSolicitudDeCarga)
+values ('CUIT', 185221369339, 'Envio Express SRL', 1)
+go
+
+
+--Remito
+insert into Remito (fechaEnvio, idCliente, idHabilitado)
+values ('30/01/2016', 1, 1)
+go
+insert into Remito (fechaEnvio, idCliente, idHabilitado)
+values ('04/02/2016', 2, 1)
+go
+
+
+--Item Remito
+insert into ItemRemito (idRemito, idCarga, cantidad)
+values (1, 1, 8)
+go
+insert into ItemRemito (idRemito, idCarga, cantidad)
+values (2, 2, 4)
+go
+
+
+--Costo
+insert into Costo (unidadTarifa, tarifa, vigencia, condicionPago, idServicio)
+values ('Pesos', 2940, '29/08/2015', 'Efectivo', 1)
+go
