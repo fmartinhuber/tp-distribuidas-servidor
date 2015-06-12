@@ -13,7 +13,7 @@ public class SolicitudDeCarga implements ISolicitudDeCarga{
 	
 	private Cliente cliente;
 	private List<Carga> cargas;
-	private List<Habilitado> habilitados;
+	private String personaHabilitado;
 	private Direccion direccion;
 	private Date fechaEntregaProbable;
 	private Date fechaEntregaMaxima;
@@ -21,11 +21,11 @@ public class SolicitudDeCarga implements ISolicitudDeCarga{
 	private String estadoSolcitud;
 	
 	public SolicitudDeCarga (Cliente cliente, List<Carga> cargas, 
-			List<Habilitado> habilitados, Direccion direccion, Date fechaEntregaProbable, 
+			String habilitados, Direccion direccion, Date fechaEntregaProbable, 
 			Date fechaEntregaMaxima, String manifiesto, String estadoSolcitud) {
 		this.cliente = cliente;
 		this.cargas = cargas;
-		this.habilitados = habilitados;
+		this.personaHabilitado = habilitados;
 		this.direccion = direccion;
 		this.fechaEntregaProbable = fechaEntregaProbable;
 		this.fechaEntregaMaxima = fechaEntregaMaxima;
@@ -49,13 +49,6 @@ public class SolicitudDeCarga implements ISolicitudDeCarga{
 		this.cargas = cargas;
 	}
 
-	public List<Habilitado> getHabilitados() {
-		return habilitados;
-	}
-
-	public void setHabilitados(List<Habilitado> habilitados) {
-		this.habilitados = habilitados;
-	}
 
 	public Direccion getDireccion() {
 		return direccion;
@@ -115,6 +108,14 @@ public class SolicitudDeCarga implements ISolicitudDeCarga{
 	public void actualizarEstado(String estado) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public String getPersonaHabilitado() {
+		return personaHabilitado;
+	}
+
+	public void setPersonaHabilitado(String personaHabilitado) {
+		this.personaHabilitado = personaHabilitado;
 	}
 
 }

@@ -16,6 +16,7 @@ public class AdministradorVarios implements IAdministradorVarios{
 	private List<Empleado> empleados;
 	private List<Vehiculo> vehiculos;
 	private List<Proveedor> proveedores;
+	private List<Factura> facturas;
 	private static AdministradorVarios instancia;
 	
 	public AdministradorVarios() {
@@ -24,6 +25,7 @@ public class AdministradorVarios implements IAdministradorVarios{
 		this.empleados = new ArrayList<Empleado>();
 		this.vehiculos = new ArrayList<Vehiculo>();
 		this.proveedores = new ArrayList<Proveedor>();
+		this.setFacturas(new ArrayList<Factura>());
 	}
 
 	public static AdministradorVarios getInstancia(){
@@ -81,6 +83,14 @@ public class AdministradorVarios implements IAdministradorVarios{
 	}
 	public void altaEmpleado(EmpleadoDto empleado) {
 		
+	}
+
+	public List<Factura> getFacturas() {
+		return facturas;
+	}
+
+	public void setFacturas(List<Factura> facturas) {
+		this.facturas = facturas;
 	} 
 	
 	

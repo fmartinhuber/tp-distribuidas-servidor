@@ -6,7 +6,6 @@ import java.util.List;
 import rmi.ICliente;
 import dao.ClienteDao;
 import dto.ClienteDto;
-import dto.HabilitadoDto;
 import bean.ClienteBean;
 import bean.HabilitadoBean;
 
@@ -76,23 +75,4 @@ public class Cliente implements ICliente{
 	}
 */	
 
-	//Este metodo pasa la lista HabilitadoDto a HabilitadoNegocio
-	public List<Habilitado> clienteDtoTOClienteNegocio_Habilitado (List<HabilitadoDto> habilitadoDto){
-		List<Habilitado> habilitadoNegocio = new ArrayList<Habilitado>();
-		for (int i = 0; i < habilitadoDto.size(); i++){
-			Habilitado habneg = new Habilitado (habilitadoDto.get(i).getTipoDocumento(), habilitadoDto.get(i).getNroDocumento(), habilitadoDto.get(i).getApellidoNombre());
-			habilitadoNegocio.add(habneg);
-		}
-		return habilitadoNegocio;
-	}
-	
-	//Este metodo pasa la lista HabilitadoNegocio a HabilitadoBean
-	public List<HabilitadoBean> clienteNegocioTOClienteBean_Habilitado (List<Habilitado> habilitadoNegocio){
-		List<HabilitadoBean> habilitadoBean = new ArrayList<HabilitadoBean>();
-		for (int i = 0; i < habilitadoNegocio.size(); i++){
-			HabilitadoBean habbea = new HabilitadoBean (habilitadoNegocio.get(i).getTipoDocumento(), habilitadoNegocio.get(i).getNroDocumento(), habilitadoNegocio.get(i).getApellidoNombre());
-			habilitadoBean.add(habbea);
-		}
-		return habilitadoBean;
-	}
 }

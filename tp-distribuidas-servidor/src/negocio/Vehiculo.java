@@ -23,6 +23,12 @@ public class Vehiculo implements IVehiculo{
 	private float capacidadDisponible;
 	private boolean enMantenimiento;
 	private boolean enViaje;
+	//Sirve tanto a de agenda a futuro como de historial
+	private List <Viaje> agenda;
+	
+	public Vehiculo (){
+		this.agenda = new ArrayList <Viaje>();
+	}
 	
 	public String getDominio() {
 		return dominio;
@@ -168,6 +174,14 @@ public class Vehiculo implements IVehiculo{
 			listaDto.add(vehiculoDto);
 		}
 		return listaDto;
+	}
+
+	public List <Viaje> getHistorial() {
+		return agenda;
+	}
+
+	public void setHistorial(List <Viaje> historial) {
+		this.agenda = historial;
 	}
 
 

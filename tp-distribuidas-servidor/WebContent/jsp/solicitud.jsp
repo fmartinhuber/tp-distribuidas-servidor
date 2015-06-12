@@ -66,7 +66,8 @@
                         <h1>Solicitud de Carga</h1>
                         <form action="altaSolicitud" method="get">
 						<table>
-						<tr><td>Dni: <input type="dni" >Vehiculo: <input ></td></tr>
+						<tr><td>Dni: <input type="dni" ></td></tr>
+						<tr><td>Vehiculo: <input ></td></tr>
 						<tr><td>Fecha Desde: <input type="dni" ></td></tr>
 						<tr><td>Fecha Hasta: <input type="dni" ></td></tr>
 						<tr><td>Pais: <input type="pais"/> </td></tr>
@@ -75,6 +76,13 @@
 						<tr><td>Calle: <input type="calle"/> </td></tr>
 						<tr><td>numero: <input type="numero"/> </td></tr>
 						<tr><td>codigo Postal: <input type="codigoPostal"/> </td></tr>
+						<tr><td>Fecha Entrega Probable: <input type="fechaEntregaProbable"/> </td></tr>
+						<tr><td>Fecha Entrega Maxima: <input type="fechaEntregaMaxima"/> </td></tr>
+						<tr><td>Persona Habilitada: <input type="fechaEntregaMaxima"/> </td></tr>
+						
+						<form action="altaCarga" method="get">
+						<tr><td>Persona Habilitada: <input type="fechaEntregaMaxima"/> </td></tr>
+						</form>
 						
 						
 						<tr><td><input type="submit" value="Aceptar"><input type="submit" value="Cancelar"></td></tr>

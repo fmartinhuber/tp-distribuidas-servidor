@@ -1,13 +1,18 @@
 package negocio;
 
 import java.io.File;
+
 import bean.CargaBean;
 import bean.DimensionBean;
 import dao.CargaDao;
 
 public class Carga{
 	
-	private Dimension dimension;
+	private float alto;
+	private float ancho;
+	private float profundidad;
+	private float peso;
+	private float volumen;
 	private boolean apilable;
 	private int cantidadApilable;
 	private String fragilidad;
@@ -17,9 +22,17 @@ public class Carga{
 	private String permiso;
 	private File archivoPermiso;
 	
-	public Carga(Dimension dimension, boolean apilable, int cantidadApilable, String fragilidad, String tratamiento,
-			String condicionViaje, String textoManipulacion, String permiso, File archivoPermiso) {
-		this.dimension = dimension;
+	
+	public Carga(float alto, float ancho, float profundidad, float peso,
+			float volumen, boolean apilable, int cantidadApilable,
+			String fragilidad, String tratamiento, String condicionViaje,
+			String textoManipulacion, String permiso, File archivoPermiso) {
+		super();
+		this.alto = alto;
+		this.ancho = ancho;
+		this.profundidad = profundidad;
+		this.peso = peso;
+		this.volumen = volumen;
 		this.apilable = apilable;
 		this.cantidadApilable = cantidadApilable;
 		this.fragilidad = fragilidad;
@@ -29,7 +42,7 @@ public class Carga{
 		this.permiso = permiso;
 		this.archivoPermiso = archivoPermiso;
 	}
-	
+
 	/*public void guardar(){
 		CargaBean cargaBean = new CargaBean (dimensionNegocioTOdimensionBean(this.dimension), this.apilable, 
 				this.cantidadApilable, this.fragilidad, this.tratamiento, this.condicionViaje, 
@@ -37,12 +50,45 @@ public class Carga{
 		CargaDao.getInstancia().guardar(cargaBean);
 	}*/
 
-	public Dimension getDimension() {
-		return dimension;
+
+	public float getAlto() {
+		return alto;
 	}
 
-	public void setDimension(Dimension dimension) {
-		this.dimension = dimension;
+	public void setAlto(float alto) {
+		this.alto = alto;
+	}
+
+	public float getAncho() {
+		return ancho;
+	}
+
+	public void setAncho(float ancho) {
+		this.ancho = ancho;
+	}
+
+	public float getProfundidad() {
+		return profundidad;
+	}
+
+	public void setProfundidad(float profundidad) {
+		this.profundidad = profundidad;
+	}
+
+	public float getPeso() {
+		return peso;
+	}
+
+	public void setPeso(float peso) {
+		this.peso = peso;
+	}
+
+	public float getVolumen() {
+		return volumen;
+	}
+
+	public void setVolumen(float volumen) {
+		this.volumen = volumen;
 	}
 
 	public boolean isApilable() {
@@ -107,9 +153,5 @@ public class Carga{
 
 	public void setArchivoPermiso(File archivoPermiso) {
 		this.archivoPermiso = archivoPermiso;
-	}
-
-	public DimensionBean dimensionNegocioTOdimensionBean (Dimension dimNeg){
-		return new DimensionBean (dimNeg.getAlto(), dimNeg.getAncho(), dimNeg.getProfundidad(), dimNeg.getPeso(), dimNeg.getVolumen());
 	}
 }
