@@ -7,7 +7,6 @@ import rmi.ICliente;
 import dao.ClienteDao;
 import dto.ClienteDto;
 import bean.ClienteBean;
-import bean.HabilitadoBean;
 
 public class Cliente implements ICliente{
 	

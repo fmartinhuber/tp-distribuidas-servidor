@@ -21,11 +21,9 @@ public class HibernateUtil
         	 config.addAnnotatedClass(CostoBean.class);
         	 config.addAnnotatedClass(CuentaCorrienteBean.class);
         	 config.addAnnotatedClass(DepositoBean.class);
-        	 config.addAnnotatedClass(DimensionBean.class);
         	 config.addAnnotatedClass(DireccionBean.class);
         	 config.addAnnotatedClass(EmpleadoBean.class);
         	 config.addAnnotatedClass(EmpresaBean.class);
-        	 config.addAnnotatedClass(HabilitadoBean.class);
         	 config.addAnnotatedClass(ItemRemitoBean.class);
         	 config.addAnnotatedClass(MovimientoBean.class);
         	 config.addAnnotatedClass(ParticularBean.class);

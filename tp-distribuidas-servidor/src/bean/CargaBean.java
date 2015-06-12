@@ -10,9 +10,12 @@ public class CargaBean{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 		private int idCarga;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="idDimension", nullable=false)
-		private DimensionBean dimension;
+
+	private float alto;
+	private float ancho;
+	private float profundidad;
+	private float peso;
+	private float volumen;
 	private boolean apilable;
 	private int cantidadApilable;
 	private String fragilidad;
@@ -30,14 +33,20 @@ public class CargaBean{
 	
 	
 	
-	public CargaBean(int idCarga, DimensionBean dimension, boolean apilable,
-			int cantidadApilable, String fragilidad, String tratamiento,
-			String condicionViaje, String textoManipulacion, String permiso,
-			String archivoPermiso, DepositoBean depositos,
+
+	public CargaBean(int idCarga, float alto, float ancho, float profundidad,
+			float peso, float volumen, boolean apilable, int cantidadApilable,
+			String fragilidad, String tratamiento, String condicionViaje,
+			String textoManipulacion, String permiso, String archivoPermiso,
+			DepositoBean depositos,
 			SolicitudDeCargaBean solicitudesdecarga_carga) {
 		super();
 		this.idCarga = idCarga;
-		this.dimension = dimension;
+		this.alto = alto;
+		this.ancho = ancho;
+		this.profundidad = profundidad;
+		this.peso = peso;
+		this.volumen = volumen;
 		this.apilable = apilable;
 		this.cantidadApilable = cantidadApilable;
 		this.fragilidad = fragilidad;
@@ -48,6 +57,46 @@ public class CargaBean{
 		this.archivoPermiso = archivoPermiso;
 		this.depositos = depositos;
 		this.solicitudesdecarga_carga = solicitudesdecarga_carga;
+	}
+
+	public float getAlto() {
+		return alto;
+	}
+
+	public void setAlto(float alto) {
+		this.alto = alto;
+	}
+
+	public float getAncho() {
+		return ancho;
+	}
+
+	public void setAncho(float ancho) {
+		this.ancho = ancho;
+	}
+
+	public float getProfundidad() {
+		return profundidad;
+	}
+
+	public void setProfundidad(float profundidad) {
+		this.profundidad = profundidad;
+	}
+
+	public float getPeso() {
+		return peso;
+	}
+
+	public void setPeso(float peso) {
+		this.peso = peso;
+	}
+
+	public float getVolumen() {
+		return volumen;
+	}
+
+	public void setVolumen(float volumen) {
+		this.volumen = volumen;
 	}
 
 	public CargaBean() {
@@ -62,13 +111,6 @@ public class CargaBean{
 		this.idCarga = idCarga;
 	}
 
-	public DimensionBean getDimension() {
-		return dimension;
-	}
-
-	public void setDimension(DimensionBean dimension) {
-		this.dimension = dimension;
-	}
 
 	public boolean isApilable() {
 		return apilable;

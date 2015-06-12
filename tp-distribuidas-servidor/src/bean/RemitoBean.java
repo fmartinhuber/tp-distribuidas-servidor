@@ -16,9 +16,7 @@ public class RemitoBean{
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="idCliente", nullable=false)
 		private ClienteBean remitente;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="idHabilitado", nullable=false)
-		private HabilitadoBean destinatario;
+		private String destinatario;
 	@OneToOne (cascade=CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 		private SucursalBean sucursalOrigen;

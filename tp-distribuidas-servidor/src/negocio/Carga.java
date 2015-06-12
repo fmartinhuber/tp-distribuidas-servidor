@@ -1,12 +1,7 @@
 package negocio;
-
-<<<<<<< HEAD
 import java.io.File;
 
-=======
->>>>>>> branch 'master' of https://github.com/fmartinhuber/tp-distribuidas-servidor
 import bean.CargaBean;
-import bean.DimensionBean;
 import dao.CargaDao;
 
 public class Carga{
@@ -25,23 +20,18 @@ public class Carga{
 	private String permiso;
 	private String archivoPermiso;
 	
-<<<<<<< HEAD
+	
 	
 	public Carga(float alto, float ancho, float profundidad, float peso,
 			float volumen, boolean apilable, int cantidadApilable,
 			String fragilidad, String tratamiento, String condicionViaje,
-			String textoManipulacion, String permiso, File archivoPermiso) {
+			String textoManipulacion, String permiso, String archivoPermiso) {
 		super();
 		this.alto = alto;
 		this.ancho = ancho;
 		this.profundidad = profundidad;
 		this.peso = peso;
 		this.volumen = volumen;
-=======
-	public Carga(Dimension dimension, boolean apilable, int cantidadApilable, String fragilidad, String tratamiento,
-			String condicionViaje, String textoManipulacion, String permiso, String archivoPermiso) {
-		this.dimension = dimension;
->>>>>>> branch 'master' of https://github.com/fmartinhuber/tp-distribuidas-servidor
 		this.apilable = apilable;
 		this.cantidadApilable = cantidadApilable;
 		this.fragilidad = fragilidad;
@@ -51,17 +41,10 @@ public class Carga{
 		this.permiso = permiso;
 		this.archivoPermiso = archivoPermiso;
 	}
-<<<<<<< HEAD
 
-	/*public void guardar(){
-		argaBean cargaBean = new CargaBean (dimensionNegocioTOdimensionBean(this.dimension), this.apilable,*/ 
-=======
-	
+
 	public void guardar(){
-		CargaBean cargaBean = new CargaBean (cantidadApilable, dimensionNegocioTOdimensionBean(this.dimension), this.apilable, 
->>>>>>> branch 'master' of https://github.com/fmartinhuber/tp-distribuidas-servidor
-				this.cantidadApilable, this.fragilidad, this.tratamiento, this.condicionViaje, 
-				this.textoManipulacion, this.permiso, this.archivoPermiso, null, null);		
+		CargaBean cargaBean = new CargaBean ();		
 		CargaDao.getInstancia().guardar(cargaBean);
 	}
 

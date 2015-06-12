@@ -22,8 +22,7 @@ public class SolicitudDeCargaBean{
 	@OneToMany (cascade=CascadeType.ALL, mappedBy="solicitudesdecarga_carga")
 		private List<CargaBean> cargas = new ArrayList<CargaBean>();
 	
-	@OneToMany (cascade=CascadeType.ALL, mappedBy="solicitudesdecarga_habilitado")
-		private List<HabilitadoBean> habilitado = new ArrayList<HabilitadoBean>();
+		private String habilitado;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@PrimaryKeyJoinColumn
@@ -45,7 +44,7 @@ public class SolicitudDeCargaBean{
 	
 	
 	public SolicitudDeCargaBean(ClienteBean cliente, List<CargaBean> cargas,
-			List<HabilitadoBean> habilitado, DireccionBean destino,
+			String habilitado, DireccionBean destino,
 			Date fechaEntregaProbable, Date fechaEntregaMaxima,
 			String manifiesto, String estadoSolicitud) {
 		super();
@@ -87,11 +86,11 @@ public class SolicitudDeCargaBean{
 		this.cargas = cargas;
 	}
 
-	public List<HabilitadoBean> getHabilitado() {
+	public String getHabilitado() {
 		return habilitado;
 	}
 
-	public void setHabilitado(List<HabilitadoBean> habilitado) {
+	public void setHabilitado(String habilitado) {
 		this.habilitado = habilitado;
 	}
 
