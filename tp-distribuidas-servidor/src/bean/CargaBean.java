@@ -20,7 +20,7 @@ public class CargaBean{
 	private String condicionViaje;
 	private String textoManipulacion;
 	private String permiso;
-	private File archivoPermiso;
+	private String archivoPermiso;
 	@ManyToOne
 	@JoinColumn(name="idDeposito", nullable=false)
 		private DepositoBean depositos;
@@ -33,7 +33,7 @@ public class CargaBean{
 	public CargaBean(int idCarga, DimensionBean dimension, boolean apilable,
 			int cantidadApilable, String fragilidad, String tratamiento,
 			String condicionViaje, String textoManipulacion, String permiso,
-			File archivoPermiso, DepositoBean depositos,
+			String archivoPermiso, DepositoBean depositos,
 			SolicitudDeCargaBean solicitudesdecarga_carga) {
 		super();
 		this.idCarga = idCarga;
@@ -126,11 +126,11 @@ public class CargaBean{
 		this.permiso = permiso;
 	}
 
-	public File getArchivoPermiso() {
+	public String getArchivoPermiso() {
 		return archivoPermiso;
 	}
 
-	public void setArchivoPermiso(File archivoPermiso) {
+	public void setArchivoPermiso(String archivoPermiso) {
 		this.archivoPermiso = archivoPermiso;
 	}
 

@@ -1,7 +1,10 @@
 package negocio;
 
+<<<<<<< HEAD
 import java.io.File;
 
+=======
+>>>>>>> branch 'master' of https://github.com/fmartinhuber/tp-distribuidas-servidor
 import bean.CargaBean;
 import bean.DimensionBean;
 import dao.CargaDao;
@@ -20,8 +23,9 @@ public class Carga{
 	private String condicionViaje;
 	private String textoManipulacion;
 	private String permiso;
-	private File archivoPermiso;
+	private String archivoPermiso;
 	
+<<<<<<< HEAD
 	
 	public Carga(float alto, float ancho, float profundidad, float peso,
 			float volumen, boolean apilable, int cantidadApilable,
@@ -33,6 +37,11 @@ public class Carga{
 		this.profundidad = profundidad;
 		this.peso = peso;
 		this.volumen = volumen;
+=======
+	public Carga(Dimension dimension, boolean apilable, int cantidadApilable, String fragilidad, String tratamiento,
+			String condicionViaje, String textoManipulacion, String permiso, String archivoPermiso) {
+		this.dimension = dimension;
+>>>>>>> branch 'master' of https://github.com/fmartinhuber/tp-distribuidas-servidor
 		this.apilable = apilable;
 		this.cantidadApilable = cantidadApilable;
 		this.fragilidad = fragilidad;
@@ -42,13 +51,19 @@ public class Carga{
 		this.permiso = permiso;
 		this.archivoPermiso = archivoPermiso;
 	}
+<<<<<<< HEAD
 
 	/*public void guardar(){
-		CargaBean cargaBean = new CargaBean (dimensionNegocioTOdimensionBean(this.dimension), this.apilable, 
+		argaBean cargaBean = new CargaBean (dimensionNegocioTOdimensionBean(this.dimension), this.apilable,*/ 
+=======
+	
+	public void guardar(){
+		CargaBean cargaBean = new CargaBean (cantidadApilable, dimensionNegocioTOdimensionBean(this.dimension), this.apilable, 
+>>>>>>> branch 'master' of https://github.com/fmartinhuber/tp-distribuidas-servidor
 				this.cantidadApilable, this.fragilidad, this.tratamiento, this.condicionViaje, 
-				this.textoManipulacion, this.permiso, this.archivoPermiso);		
+				this.textoManipulacion, this.permiso, this.archivoPermiso, null, null);		
 		CargaDao.getInstancia().guardar(cargaBean);
-	}*/
+	}
 
 
 	public float getAlto() {
@@ -147,11 +162,11 @@ public class Carga{
 		this.permiso = permiso;
 	}
 
-	public File getArchivoPermiso() {
+	public String getArchivoPermiso() {
 		return archivoPermiso;
 	}
 
-	public void setArchivoPermiso(File archivoPermiso) {
+	public void setArchivoPermiso(String archivoPermiso) {
 		this.archivoPermiso = archivoPermiso;
 	}
 }
